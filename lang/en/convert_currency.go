@@ -1,0 +1,105 @@
+package en
+
+import (
+	"fmt"
+	"strings"
+
+	"github.com/gammban/numtow/curtow/cur"
+	"github.com/gammban/numtow/internal/ds"
+)
+
+func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
+	e := prepareCurrencyOptions(o...)
+
+	intDS, fracDS, err := ds.ParseDecimal(amount, ds.WithFracLen(uint(e.currency.MinorUnits())))
+	if err != nil {
+		return words, err
+	}
+
+	return convCurrency(intDS, fracDS, o...)
+}
+
+func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error) {
+	e := prepareCurrencyOptions(o...)
+
+	intDS, fracDS, err := ds.ParseFloat64(amount, ds.WithFracLen(uint(e.currency.MinorUnits())))
+	if err != nil {
+		return words, err
+	}
+
+	return convCurrency(intDS, fracDS, o...)
+}
+
+func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words string, err error) {
+	o := prepareCurrencyOptions(opts...)
+
+	err = o.currency.Validate()
+	if err != nil {
+		return words, err
+	}
+
+	c, ok := curNamesEN[o.currency]
+	if !ok {
+		return words, fmt.Errorf("%w: not implemented", cur.ErrBadCurrency)
+	}
+
+	err = intDS.Validate()
+	if err != nil {
+		return words, err
+	}
+
+	err = fracDS.Validate()
+	if err != nil {
+		return words, err
+	}
+
+	if fracDS.IsSignMinus {
+		return words, fmt.Errorf("%w: fractional part must be positive", ds.ErrParse)
+	}
+
+	sb := strings.Builder{}
+
+	intPartWords, err := convert(intDS)
+	if err != nil {
+		return words, err
+	}
+
+	sb.WriteString(intPartWords)
+	sb.WriteString(sep)
+
+	if intDS.String() == "1" {
+		sb.WriteString(c.Singular)
+	} else {
+		sb.WriteString(c.Plural)
+	}
+
+	sb.WriteString(sep)
+
+	if o.ignoreMinorUnits {
+		return strings.TrimSpace(sb.String()), nil
+	}
+
+	fracWords := ""
+
+	if o.convertMinorUnits {
+		fracWords, err = convert(fracDS)
+		if err != nil {
+			return words, err
+		}
+	} else {
+		fracWords = fracDS.String()
+	}
+
+	sb.WriteString(and)
+	sb.WriteString(sep)
+	sb.WriteString(fracWords)
+	sb.WriteString(sep)
+
+	if fracDS.String() == "1" {
+		sb.WriteString(c.UnitSingular)
+	} else {
+		sb.WriteString(c.UnitPlural)
+	}
+
+	return strings.TrimSpace(sb.String()), nil
+}
