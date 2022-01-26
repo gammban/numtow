@@ -251,34 +251,28 @@ var testCases = []struct {
 
 func TestString(t *testing.T) {
 	for _, v := range testCases {
-		v := v
-		t.Run(v.giveAmountString, func(tt *testing.T) {
-			gotAmount, gotErr := String(v.giveAmountString, v.giveLang, v.giveOpts...)
-			if !errors.Is(gotErr, v.wantErr) {
-				tt.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantErr, gotErr)
-				return
-			}
+		gotAmount, gotErr := String(v.giveAmountString, v.giveLang, v.giveOpts...)
+		if !errors.Is(gotErr, v.wantErr) {
+			t.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantErr, gotErr)
+			return
+		}
 
-			if !strings.EqualFold(gotAmount, v.wantAmount) {
-				tt.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantAmount, gotAmount)
-			}
-		})
+		if !strings.EqualFold(gotAmount, v.wantAmount) {
+			t.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantAmount, gotAmount)
+		}
 	}
 }
 
 func TestMustString(t *testing.T) {
 	for _, v := range testCases {
-		v := v
-		t.Run(v.giveAmountString, func(tt *testing.T) {
-			gotAmount := MustString(v.giveAmountString, v.giveLang, v.giveOpts...)
-			if v.wantErr != nil && gotAmount != "" {
-				tt.Errorf("expected empty string got %s", gotAmount)
-				return
-			}
+		gotAmount := MustString(v.giveAmountString, v.giveLang, v.giveOpts...)
+		if v.wantErr != nil && gotAmount != "" {
+			t.Errorf("expected empty string got %s", gotAmount)
+			return
+		}
 
-			if !strings.EqualFold(gotAmount, v.wantAmount) {
-				tt.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantAmount, gotAmount)
-			}
-		})
+		if !strings.EqualFold(gotAmount, v.wantAmount) {
+			t.Errorf("%s: \nexp: '%s' \ngot: '%s'", v.giveAmountString, v.wantAmount, gotAmount)
+		}
 	}
 }

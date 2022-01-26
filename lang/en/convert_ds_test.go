@@ -91,20 +91,16 @@ var testCaseConvertDS = []struct {
 
 func TestConvert(t *testing.T) {
 	for _, v := range testCaseConvertDS {
-		v := v
+		gotRes, gotErr := convert(v.GiveDS,
+			WithFmtGroupSep(v.GiveFmtGroupSep),
+		)
+		if !errors.Is(gotErr, v.WantErr) {
+			t.Fatalf("exp: '%s' \ngot: '%s'", v.WantErr, gotErr)
+		}
 
-		t.Run("", func(tt *testing.T) {
-			gotRes, gotErr := convert(v.GiveDS,
-				WithFmtGroupSep(v.GiveFmtGroupSep),
-			)
-			if !errors.Is(gotErr, v.WantErr) {
-				tt.Fatalf("exp: '%s' \ngot: '%s'", v.WantErr, gotErr)
-			}
-
-			if !strings.EqualFold(v.WantResult, gotRes) {
-				tt.Fatalf("%s\nexp: '%s'\ngot: '%s'", v.GiveDS.String(), v.WantResult, gotRes)
-			}
-		})
+		if !strings.EqualFold(v.WantResult, gotRes) {
+			t.Fatalf("%s\nexp: '%s'\ngot: '%s'", v.GiveDS.String(), v.WantResult, gotRes)
+		}
 	}
 }
 

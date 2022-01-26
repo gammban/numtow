@@ -57,30 +57,26 @@ var testCaseParseDecimal = []struct {
 
 func TestParseDecimal(t *testing.T) {
 	for _, v := range testCaseParseDecimal {
-		v := v
+		sep := defaultDecimalSeparator
+		if v.giveSep != 0 {
+			sep = v.giveSep
+		}
 
-		t.Run(v.giveDec, func(tt *testing.T) {
-			sep := defaultDecimalSeparator
-			if v.giveSep != 0 {
-				sep = v.giveSep
-			}
+		gotInt, gotFrac, gotErr := ParseDecimal(v.giveDec, WithFracLen(v.giveExp), WithSep(sep))
+		if !errors.Is(gotErr, v.wantErr) {
+			t.Errorf("%s: err result mismatch: got %s, expected %s", v.giveDec, gotErr, v.wantErr)
+			return
+		}
 
-			gotInt, gotFrac, gotErr := ParseDecimal(v.giveDec, WithFracLen(v.giveExp), WithSep(sep))
-			if !errors.Is(gotErr, v.wantErr) {
-				t.Errorf("%s: err result mismatch: got %s, expected %s", v.giveDec, gotErr, v.wantErr)
-				return
-			}
+		if gotInt.String() != v.wantInt {
+			t.Errorf("%s: int result mismatch: got '%s', expected '%s'", v.giveDec, gotInt, v.wantInt)
+			return
+		}
 
-			if gotInt.String() != v.wantInt {
-				t.Errorf("%s: int result mismatch: got '%s', expected '%s'", v.giveDec, gotInt, v.wantInt)
-				return
-			}
-
-			if gotFrac.String() != v.wantFrac {
-				t.Errorf("%s: frac result mismatch: got '%s', expected '%s'", v.giveDec, gotFrac, v.wantFrac)
-				return
-			}
-		})
+		if gotFrac.String() != v.wantFrac {
+			t.Errorf("%s: frac result mismatch: got '%s', expected '%s'", v.giveDec, gotFrac, v.wantFrac)
+			return
+		}
 	}
 }
 
@@ -102,20 +98,16 @@ var testCaseParseInt64 = []struct {
 
 func TestParseInt64(t *testing.T) {
 	for _, v := range testCaseParseInt64 {
-		v := v
+		gotDS, gotErr := ParseInt64(v.give)
+		if !errors.Is(gotErr, v.wantErr) {
+			t.Error("mismatch")
+			return
+		}
 
-		t.Run("", func(tt *testing.T) {
-			gotDS, gotErr := ParseInt64(v.give)
-			if !errors.Is(gotErr, v.wantErr) {
-				tt.Error("mismatch")
-				return
-			}
-
-			if gotString := gotDS.String(); gotString != v.wantString {
-				tt.Errorf("mismatch: got %s, expected %s", gotString, v.wantString)
-				return
-			}
-		})
+		if gotString := gotDS.String(); gotString != v.wantString {
+			t.Errorf("mismatch: got %s, expected %s", gotString, v.wantString)
+			return
+		}
 	}
 }
 
@@ -139,20 +131,16 @@ var testCaseParseString = []struct {
 
 func TestParseString(t *testing.T) {
 	for _, v := range testCaseParseString {
-		v := v
+		gotDS, gotErr := ParseString(v.give)
+		if !errors.Is(gotErr, v.wantErr) {
+			t.Error("mismatch")
+			return
+		}
 
-		t.Run(v.give, func(tt *testing.T) {
-			gotDS, gotErr := ParseString(v.give)
-			if !errors.Is(gotErr, v.wantErr) {
-				tt.Error("mismatch")
-				return
-			}
-
-			if gotString := gotDS.String(); gotString != v.wantString {
-				tt.Errorf("mismatch: got %s, expected %s", gotString, v.wantString)
-				return
-			}
-		})
+		if gotString := gotDS.String(); gotString != v.wantString {
+			t.Errorf("mismatch: got %s, expected %s", gotString, v.wantString)
+			return
+		}
 	}
 }
 
@@ -202,24 +190,20 @@ var testCaseParseFloat64 = []struct {
 
 func TestParseFloat64(t *testing.T) {
 	for _, v := range testCaseParseFloat64 {
-		v := v
+		gotInt, gotFrac, gotErr := ParseFloat64(v.giveFloat64, WithFracLen(v.giveExp))
+		if !errors.Is(gotErr, v.wantErr) {
+			t.Errorf("%f: err result mismatch: got %s, expected %s", v.giveFloat64, gotErr, v.wantErr)
+			return
+		}
 
-		t.Run("", func(tt *testing.T) {
-			gotInt, gotFrac, gotErr := ParseFloat64(v.giveFloat64, WithFracLen(v.giveExp))
-			if !errors.Is(gotErr, v.wantErr) {
-				t.Errorf("%f: err result mismatch: got %s, expected %s", v.giveFloat64, gotErr, v.wantErr)
-				return
-			}
+		if gotInt.String() != v.wantInt {
+			t.Errorf("%f: int result mismatch: got '%s', expected '%s'", v.giveFloat64, gotInt, v.wantInt)
+			return
+		}
 
-			if gotInt.String() != v.wantInt {
-				t.Errorf("%f: int result mismatch: got '%s', expected '%s'", v.giveFloat64, gotInt, v.wantInt)
-				return
-			}
-
-			if gotFrac.String() != v.wantFrac {
-				t.Errorf("%f: frac result mismatch: got '%s', expected '%s'", v.giveFloat64, gotFrac, v.wantFrac)
-				return
-			}
-		})
+		if gotFrac.String() != v.wantFrac {
+			t.Errorf("%f: frac result mismatch: got '%s', expected '%s'", v.giveFloat64, gotFrac, v.wantFrac)
+			return
+		}
 	}
 }
