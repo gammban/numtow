@@ -1,5 +1,7 @@
 # numtow
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/gammban/numtow)](https://goreportcard.com/report/github.com/gammban/numtow)
+
 golang library to convert number to words. Supported languages: kazakh, english, russian.
 
 ## Usage
