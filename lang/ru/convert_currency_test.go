@@ -5,6 +5,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/gammban/numtow/internal/ds"
+
 	"github.com/gammban/numtow/curtow/cur"
 	"github.com/gammban/numtow/internal/testdata"
 )
@@ -163,4 +165,21 @@ func TestConvCurrencyString(t *testing.T) {
 	}
 
 	t.Log(res)
+}
+
+func TestConvCurrency(t *testing.T) {
+	_, err := convCurrency(ds.New(50), ds.Empty, cur.USD, false, false)
+	if err == nil {
+		t.Fatal("expected error")
+	}
+
+	_, err = convCurrency(ds.Empty, ds.New(50), cur.USD, false, false)
+	if err == nil {
+		t.Fatal("expected error")
+	}
+
+	_, err = convCurrency(ds.Empty, ds.Empty, cur.USD, false, false)
+	if err == nil {
+		t.Fatal("expected error")
+	}
 }

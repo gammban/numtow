@@ -6,6 +6,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/gammban/numtow/lang/en"
+
 	"github.com/gammban/numtow/internal/ds"
 	"github.com/gammban/numtow/lang"
 	"github.com/gammban/numtow/lang/kz"
@@ -184,6 +186,10 @@ var testCaseDecimalNumbers = []struct {
 	{
 		GiveDecimal: "1,974", GiveFloat64: 1.974, GiveLang: lang.KZ, GiveOpts: []interface{}{kz.WithParseFracLen(1), kz.WithParseSep(',')},
 		WantResult: "бір бүтін оннан тоғыз",
+	},
+	{
+		GiveDecimal: "1.5", GiveFloat64: 1.5, GiveLang: lang.EN, GiveOpts: []interface{}{en.WithParseFracLen(1)},
+		WantResult: "one point five",
 	},
 }
 

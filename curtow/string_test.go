@@ -6,6 +6,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/gammban/numtow/lang/en"
+
 	"github.com/gammban/numtow/curtow/cur"
 	"github.com/gammban/numtow/internal/ds"
 	"github.com/gammban/numtow/lang/kz"
@@ -246,6 +248,10 @@ var testCases = []struct {
 	{
 		giveAmountString: "4.39", giveAmountFloat64: 4.39, giveLang: lang.Lang(10), giveOpts: []interface{}{kz.WithCur(cur.RUB), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},
 		wantAmount: "", wantErr: lang.ErrBadLanguage,
+	},
+	{
+		giveAmountString: "4", giveAmountFloat64: 4, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD)},
+		wantAmount: "four dollars and 00 cents",
 	},
 }
 

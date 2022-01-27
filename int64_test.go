@@ -5,6 +5,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/gammban/numtow/lang/en"
+
 	"github.com/gammban/numtow/lang"
 	"github.com/gammban/numtow/lang/kz"
 	"github.com/gammban/numtow/lang/ru"
@@ -131,6 +133,10 @@ var testCaseIntNumbers = []struct {
 	{
 		GiveInt: "1", GiveInt64: 1, GiveLang: lang.KZ, GiveOpts: []interface{}{kz.WithFmtFracIgnore(true)},
 		WantResult: "бір",
+	},
+	{
+		GiveInt: "1", GiveInt64: 1, GiveLang: lang.EN, GiveOpts: []interface{}{en.WithFmtFracIgnore(true)},
+		WantResult: "one",
 	},
 }
 
