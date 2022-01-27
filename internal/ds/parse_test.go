@@ -46,13 +46,14 @@ var testCaseParseDecimal = []struct {
 	{giveDec: "1.2.3", giveExp: 0, wantErr: ErrParse},
 	{giveDec: "1.2.3", giveExp: 2, wantErr: ErrParse},
 	{giveDec: "1.2.3", giveExp: 2, wantErr: ErrParse},
-	{giveDec: "1.25a3", giveExp: 1, wantErr: ErrParse},
+	{giveDec: "1.25a3", giveExp: 3, wantErr: ErrParse},
 	{giveDec: "0.123456789", giveExp: 2, wantInt: "0", wantFrac: "12"},
 	{giveDec: "0.123456789", giveExp: 0, wantInt: "0", wantFrac: "123456789"},
 	{giveDec: ",123456789", giveExp: 1, giveSep: ',', wantInt: "0", wantFrac: "1"},
 	{giveDec: "-.123456789", giveExp: 5, wantInt: "-0", wantFrac: "12345"},
 	{giveDec: "100", giveExp: 2, wantInt: "100", wantFrac: "00"},
 	{giveDec: "00001.02", giveExp: 2, wantInt: "00001", wantFrac: "02"},
+	{giveDec: "1.bad", wantErr: ErrParse},
 }
 
 func TestParseDecimal(t *testing.T) {
@@ -98,8 +99,8 @@ var testCaseParseInt64 = []struct {
 
 func TestParseInt64(t *testing.T) {
 	for _, v := range testCaseParseInt64 {
-		gotDS, gotErr := ParseInt64(v.give)
-		if !errors.Is(gotErr, v.wantErr) {
+		gotDS := ParseInt64(v.give)
+		if gotDS.IsEmpty() {
 			t.Error("mismatch")
 			return
 		}

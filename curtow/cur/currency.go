@@ -5,13 +5,19 @@ import (
 	"strings"
 )
 
+// Currency is a currency type
 type Currency uint32
 
 const (
+	// Unknown currency
 	Unknown Currency = iota
+	// KZT - Kazakhstan Tenge
 	KZT
+	// USD - U.S. Dollar
 	USD
+	// RUB - Russian Ruble
 	RUB
+	// EUR - Euro
 	EUR
 )
 
@@ -26,6 +32,8 @@ var (
 	ErrBadCurrency = errors.New("bad currency")
 )
 
+// String return code of currency
+//  USD.String() // "USD"
 func (c Currency) String() string {
 	switch c {
 	case KZT:
@@ -79,6 +87,7 @@ func (c Currency) ISO4217() *ISO4217 {
 	return nil
 }
 
+// Validate validates currency. In case of invalid currency returns ErrBadCurrency.
 func (c Currency) Validate() error {
 	switch c {
 	case KZT, RUB, USD, EUR:

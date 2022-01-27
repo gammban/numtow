@@ -16,12 +16,7 @@ func MustInt64(number int64, options ...OptFunc) string {
 func Int64(number int64, options ...OptFunc) (string, error) {
 	e := prepareOptions(options...)
 
-	d, err := ds.ParseInt64(number)
-	if err != nil {
-		return "", err
-	}
-
-	return convert(d, e.FmtGender)
+	return convert(ds.ParseInt64(number), e.FmtGender)
 }
 
 func Float64(decimal float64, options ...OptFunc) (result string, err error) {

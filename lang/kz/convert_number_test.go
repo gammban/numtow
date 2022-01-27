@@ -156,3 +156,10 @@ func TestMustInt64(t *testing.T) {
 		t.Fatal("result mismatch, expected бір")
 	}
 }
+
+func TestString_Error(t *testing.T) {
+	_, err := String("a.55")
+	if err == nil {
+		t.Fatal("expected error")
+	}
+}

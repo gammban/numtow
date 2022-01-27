@@ -4,7 +4,13 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/gammban/numtow)](https://goreportcard.com/report/github.com/gammban/numtow)
 [![codecov](https://codecov.io/gh/gammban/numtow/branch/main/graph/badge.svg)](https://codecov.io/gh/gammban/numtow)
 
-golang library to convert number to words. Supported languages: kazakh, english, russian.
+golang library to convert number to words, currencies to words. 
+
+## Import
+
+```shell
+go get github.com/gammban/numtow
+```
 
 ## Usage
 
@@ -84,6 +90,41 @@ var MyFormat = []en.OptFunc{
 }
 fmt.Println(en.MustString("12,54", MyFormat...)) // twelve point 54
 ```
+
+## Convert currencies
+
+```go
+import "github.com/gammban/numtow/curtow"
+...
+// convert currency to english words using curtow package
+fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD)))                           // twelve dollars and 00 cents
+fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD), en.WithCurIgnoreMU(true))) // twelve dollars
+fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD), en.WithCurConvMU(true)))   // twelve dollars and zero cents
+
+res, err := en.CurrencyString("53241", en.WithCur(cur.EUR))
+if err != nil {
+	fmt.Println(err)
+}
+fmt.Println(res) // fifty-three thousand, two hundred and forty-one euros and 00 cents
+
+fmt.Println(curtow.MustString("12", lang.KZ, kz.WithCur(cur.KZT)))                           // он екі теңге 00 тиын
+fmt.Println(curtow.MustString("12", lang.KZ, kz.WithCur(cur.KZT), kz.WithCurIgnoreMU(true))) // он екі теңге
+fmt.Println(curtow.MustString("12", lang.KZ, kz.WithCur(cur.KZT), kz.WithCurConvMU(true)))   // он екі теңге нөл тиын
+fmt.Println(curtow.MustFloat64(25.79, lang.KZ, kz.WithCur(cur.USD), kz.WithCurConvMU(true))) // жиырма бес АҚШ доллары жетпіс тоғыз цент
+
+res, err := kz.CurrencyString("53241", kz.WithCur(cur.KZT))
+fmt.Println(res) // елу үш мың екі жүз қырық бір теңге 00 тиын
+
+res, err = kz.CurrencyFloat64(125.53, kz.WithCur(cur.KZT))
+fmt.Println(res) // жүз жиырма бес теңге 53 тиын
+```
+
+## Supported currencies
+
+- USD
+- EUR
+- KZT
+- RUB
 
 ## Supported languages
 

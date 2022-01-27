@@ -57,6 +57,7 @@ func WithSep(separator rune) ParseOptFunc {
 	}
 }
 
+// ParseString parses string and returns a valid DigitString. In case when string is not a valid DigitString returns ErrParse.
 func ParseString(s string) (ds DigitString, err error) {
 	if s == "" {
 		return ds, ErrParse
@@ -85,8 +86,26 @@ func ParseString(s string) (ds DigitString, err error) {
 	return ds, nil
 }
 
-func ParseInt64(num int64) (ds DigitString, err error) {
-	return ParseString(strconv.FormatInt(num, base))
+// ParseInt64 returns DigitString from int64
+func ParseInt64(num int64) (ds DigitString) {
+	s := strconv.FormatInt(num, base)
+
+	data := make([]digit.Digit, 0, len(s))
+	isSignMinus := false
+
+	for k, v := range s {
+		if k == 0 && v == '-' {
+			isSignMinus = true
+			continue
+		}
+
+		data = append(data, digit.ParseRune(v))
+	}
+
+	ds.DS = data
+	ds.IsSignMinus = isSignMinus
+
+	return ds
 }
 
 // ParseFloat64 returns integer and fractional parts.
@@ -136,13 +155,6 @@ func ParseDecimal(number string, options ...ParseOptFunc) (intDS, fracDS DigitSt
 
 	if exp != 0 && int(exp) > len(fracPart) {
 		fracPart += strings.Repeat("0", int(exp)-len(fracPart))
-	}
-
-	if fracPart != "" {
-		_, err = ParseString(fracPart)
-		if err != nil {
-			return intDS, fracDS, ErrParse
-		}
 	}
 
 	if exp != 0 && int(exp) < len(fracPart) {

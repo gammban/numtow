@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// MinorUnits is a type for currency's minor units
 type MinorUnits uint8
 
 const (
@@ -23,6 +24,7 @@ const (
 	base = 10
 )
 
+// String returns string value of minor units
 func (m MinorUnits) String() string {
 	err := m.Validate()
 	if err != nil {

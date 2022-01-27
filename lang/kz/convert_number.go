@@ -45,12 +45,7 @@ func MustString(decimal string, options ...OptFunc) string {
 }
 
 func Int64(number int64, options ...OptFunc) (result string, err error) {
-	d, err := ds.ParseInt64(number)
-	if err != nil {
-		return result, err
-	}
-
-	return convert(d)
+	return convert(ds.ParseInt64(number))
 }
 
 func MustInt64(number int64, options ...OptFunc) string {

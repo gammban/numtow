@@ -34,12 +34,7 @@ func CurrencyInt64(amount int64, o ...CurrencyOpt) (words string, err error) {
 
 	e.ignoreMinorUnits = true
 
-	intDS, err := ds.ParseInt64(amount)
-	if err != nil {
-		return words, err
-	}
-
-	return convCurrency(intDS, ds.Zero, e.currency, e.ignoreMinorUnits, e.convertMinorUnits)
+	return convCurrency(ds.ParseInt64(amount), ds.Zero, e.currency, e.ignoreMinorUnits, e.convertMinorUnits)
 }
 
 func convCurrency(intDS, fracDS ds.DigitString, c cur.Currency, hideMU, convMU bool) (words string, err error) {

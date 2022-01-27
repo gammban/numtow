@@ -39,3 +39,47 @@ func TestConvert(t *testing.T) {
 		t.Fatal("expected error")
 	}
 }
+
+func TestConvertDecimal(t *testing.T) {
+	_, err := convertDecimal(ds.DigitString{}, ds.DigitString{IsSignMinus: true})
+	if err == nil {
+		t.Fatal("expected error")
+	}
+
+	_, err = convertDecimal(ds.New(50), ds.DigitString{})
+	if err == nil {
+		t.Fatal("expected error")
+	}
+
+	_, err = convertDecimal(ds.Empty, ds.New(60))
+	if err == nil {
+		t.Fatal("expected error")
+	}
+
+	longDS, err := ds.ParseString("123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890")
+	if err != nil {
+		t.Fatal("unexpected")
+	}
+
+	_, err = convertDecimal(ds.Empty, longDS)
+	if err == nil {
+		t.Fatal("expected error")
+	}
+}
+
+func TestGetFracPartName(t *testing.T) {
+	_, err := getFracPartName(ds.Empty)
+	if err == nil {
+		t.Fatal("mismatch")
+	}
+
+	longDS, err := ds.ParseString("123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890")
+	if err != nil {
+		t.Fatal("unexpected")
+	}
+
+	_, err = getFracPartName(longDS)
+	if err == nil {
+		t.Fatal("mismatch")
+	}
+}

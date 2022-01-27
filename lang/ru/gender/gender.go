@@ -6,7 +6,7 @@ var (
 	ErrBadGender = errors.New("bad gender")
 )
 
-// Gender - род
+// Gender - gender for russian language.
 type Gender uint8
 
 const (
@@ -20,6 +20,7 @@ const (
 	Neuter
 )
 
+// Validate returns ErrBadGender when Gender is not valid.
 func (g Gender) Validate() error {
 	switch g {
 	case Male, Female, Neuter:
