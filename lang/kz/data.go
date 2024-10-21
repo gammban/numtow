@@ -55,6 +55,18 @@ var (
 		cur.RUB: "рубль",
 		cur.USD: "АҚШ доллары",
 		cur.EUR: "еуро",
+		cur.GBP: "фунті",
+		cur.CHF: "франкі",
+		cur.CAD: "канадалық доллары",
+		cur.JPY: "иені",
+		cur.CNY: "юані",
+		cur.AUD: "австралиялық доллар",
+		cur.AED: "дирхамы",
+		cur.TRY: "лирасы",
+		cur.KGS: "сомы",
+		cur.ZAR: "ранді",
+		cur.NOK: "кронасы",
+		cur.SEK: "кронасы",
 	}
 
 	curUnitNamesKZ = map[cur.Currency]string{
@@ -62,5 +74,17 @@ var (
 		cur.RUB: "тиын",
 		cur.USD: "цент",
 		cur.EUR: "евроцент",
+		cur.GBP: "пенсы",
+		cur.CHF: "раппены",
+		cur.CAD: "цент",
+		cur.JPY: "сен",
+		cur.CNY: "цзяосы",
+		cur.AUD: "цент",
+		cur.AED: "филс",
+		cur.TRY: "кұрушы",
+		cur.KGS: "тиыні",
+		cur.ZAR: "цент",
+		cur.NOK: "эреі",
+		cur.SEK: "эреі",
 	}
 )

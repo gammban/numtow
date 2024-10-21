@@ -78,7 +78,160 @@ var (
 				DeclinationSingular: "пенс",
 				Declination234:      "пенса",
 			},
-			UnitGender: gender.Female,
+			UnitGender: gender.Male,
+		},
+		cur.CHF: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "франков",
+				DeclinationSingular: "франк",
+				Declination234:      "франка",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "раппенов",
+				DeclinationSingular: "раппен",
+				Declination234:      "раппена",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.CAD: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "канадский долларов",
+				DeclinationSingular: "канадский доллар",
+				Declination234:      "канадских доллара",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "центов",
+				DeclinationSingular: "цент",
+				Declination234:      "цента",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.JPY: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "иен",
+				DeclinationSingular: "иена",
+				Declination234:      "иены",
+			},
+			NameGender: gender.Female,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "сены",
+				DeclinationSingular: "сен",
+				Declination234:      "сены",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.CNY: {Name: map[Declination]string{
+			DeclinationPlural:   "юаней",
+			DeclinationSingular: "юань",
+			Declination234:      "юаня",
+		},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "цзяо",
+				DeclinationSingular: "цзяо",
+				Declination234:      "цзяо",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.AUD: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "австралийских долларов",
+				DeclinationSingular: "австралийский доллар",
+				Declination234:      "австралийских доллара",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "центов",
+				DeclinationSingular: "цент",
+				Declination234:      "цента",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.AED: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "дирхамов",
+				DeclinationSingular: "дирхам",
+				Declination234:      "дирхама",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "филсов",
+				DeclinationSingular: "филс",
+				Declination234:      "филса",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.TRY: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "лир",
+				DeclinationSingular: "лира",
+				Declination234:      "лиры",
+			},
+			NameGender: gender.Female,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "курушей",
+				DeclinationSingular: "куруш",
+				Declination234:      "куруша",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.KGS: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "сомов",
+				DeclinationSingular: "сом",
+				Declination234:      "сома",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "тиынов",
+				DeclinationSingular: "тиын",
+				Declination234:      "тиына",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.ZAR: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "рэндов",
+				DeclinationSingular: "рэнд",
+				Declination234:      "рэнда",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "центов",
+				DeclinationSingular: "цент",
+				Declination234:      "цента",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.NOK: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "кронов",
+				DeclinationSingular: "крона",
+				Declination234:      "кроны",
+			},
+			NameGender: gender.Female,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "эре",
+				DeclinationSingular: "эре",
+				Declination234:      "эре",
+			},
+			UnitGender: gender.Male,
+		},
+		cur.SEK: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "кронов",
+				DeclinationSingular: "крона",
+				Declination234:      "кроны",
+			},
+			NameGender: gender.Female,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "эре",
+				DeclinationSingular: "эре",
+				Declination234:      "эре",
+			},
+			UnitGender: gender.Male,
 		},
 	}
 )
