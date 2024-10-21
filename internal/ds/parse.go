@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gammban/numtow/internal/digit"
+	"github.com/dantedenis/numtow/internal/digit"
 )
 
 var (
@@ -109,7 +109,8 @@ func ParseInt64(num int64) (ds DigitString) {
 }
 
 // ParseFloat64 returns integer and fractional parts.
-// 	Parsing float64 limit is 1000000000000.
+//
+//	Parsing float64 limit is 1000000000000.
 func ParseFloat64(number float64, options ...ParseOptFunc) (intDS, fracDS DigitString, err error) {
 	if math.IsNaN(number) {
 		return intDS, fracDS, fmt.Errorf("%w: float64 is NaN", ErrParse)
@@ -133,14 +134,15 @@ func ParseFloat64(number float64, options ...ParseOptFunc) (intDS, fracDS DigitS
 }
 
 // ParseDecimal returns integer and fractional parts
-// 	Examples:
-// 	ParseDecimal("123") // "123","00", nil
-// 	ParseDecimal("123.00") // "123","00", nil
-// 	ParseDecimal("-.45") // "-45","00", nil
-// 	ParseDecimal(".87") // "0","87", nil
-// 	ParseDecimal("-548725300538597.89") // "-548725300538597","89", nil
-// 	ParseDecimal("-123.5", WithFracLen(2)) // "-123","50", nil
-// 	ParseDecimal("548725300538597.89", WithFracLen(3)) // "548725300538597","89", nil
+//
+//	Examples:
+//	ParseDecimal("123") // "123","00", nil
+//	ParseDecimal("123.00") // "123","00", nil
+//	ParseDecimal("-.45") // "-45","00", nil
+//	ParseDecimal(".87") // "0","87", nil
+//	ParseDecimal("-548725300538597.89") // "-548725300538597","89", nil
+//	ParseDecimal("-123.5", WithFracLen(2)) // "-123","50", nil
+//	ParseDecimal("548725300538597.89", WithFracLen(3)) // "548725300538597","89", nil
 func ParseDecimal(number string, options ...ParseOptFunc) (intDS, fracDS DigitString, err error) {
 	o := prepareParseOpt(options...)
 

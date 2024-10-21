@@ -3,9 +3,9 @@ package curtow
 import (
 	"fmt"
 
-	"github.com/gammban/numtow/curtow/cur"
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/en"
+	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/en"
 )
 
 func ExampleMustString_eur() {

@@ -3,7 +3,7 @@ package kz
 import (
 	"testing"
 
-	"github.com/gammban/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/curtow/cur"
 )
 
 func TestParseCurrencyOpts_Variadic(t *testing.T) {

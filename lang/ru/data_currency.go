@@ -3,8 +3,8 @@ package ru
 import (
 	"fmt"
 
-	"github.com/gammban/numtow/curtow/cur"
-	"github.com/gammban/numtow/lang/ru/gender"
+	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/lang/ru/gender"
 )
 
 var (
@@ -65,6 +65,20 @@ var (
 				Declination234:      "евроцента",
 			},
 			UnitGender: gender.Male,
+		},
+		cur.GBP: {
+			Name: map[Declination]string{
+				DeclinationPlural:   "фунтов",
+				DeclinationSingular: "фунт",
+				Declination234:      "фунта",
+			},
+			NameGender: gender.Male,
+			UnitName: map[Declination]string{
+				DeclinationPlural:   "пенсов",
+				DeclinationSingular: "пенс",
+				Declination234:      "пенса",
+			},
+			UnitGender: gender.Female,
 		},
 	}
 )

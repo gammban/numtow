@@ -5,18 +5,20 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gammban/numtow/internal/digit"
-	"github.com/gammban/numtow/internal/ds"
+	"github.com/dantedenis/numtow/internal/digit"
+	"github.com/dantedenis/numtow/internal/ds"
 )
 
-//nolint:gocyclo
 // convert returns DigitString in kazakh
-// 	examples:
-// 	"" -> ""
-// 	"0" -> "нөл"
-// 	"-0" -> "нөл"
-// 	"-1" -> "минус бір"
-// 	"1" -> "бір"
+//
+//	examples:
+//	"" -> ""
+//	"0" -> "нөл"
+//	"-0" -> "нөл"
+//	"-1" -> "минус бір"
+//	"1" -> "бір"
+//
+//nolint:gocyclo
 func convert(d ds.DigitString) (result string, err error) {
 	if d.IsEmpty() {
 		return "", nil
@@ -147,10 +149,10 @@ func convertDecimal(intDS, fracDS ds.DigitString, options ...OptFunc) (result st
 	return sb.String(), nil
 }
 
-// 	1 -> оннан
-// 	10 -> жүзден
-// 	500 -> мыңнан
-// 	1000 -> миллионнан
+// 1 -> оннан
+// 10 -> жүзден
+// 500 -> мыңнан
+// 1000 -> миллионнан
 func getFracPartName(fracDS ds.DigitString) (fracPartName string, err error) {
 	if fracDS.Len() > len(fracPart) {
 		return fracPartName, fmt.Errorf("%w: fractional part range error", ds.ErrParse)

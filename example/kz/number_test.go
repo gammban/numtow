@@ -5,9 +5,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/gammban/numtow"
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/kz"
+	"github.com/dantedenis/numtow"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/kz"
 )
 
 func TestKz(t *testing.T) {

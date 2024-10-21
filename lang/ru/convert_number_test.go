@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gammban/numtow/internal/testdata"
-	"github.com/gammban/numtow/lang/ru/gender"
+	"github.com/dantedenis/numtow/internal/testdata"
+	"github.com/dantedenis/numtow/lang/ru/gender"
 )
 
 func TestInt64_Female(t *testing.T) {

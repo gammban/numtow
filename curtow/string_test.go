@@ -6,14 +6,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gammban/numtow/lang/en"
+	"github.com/dantedenis/numtow/lang/en"
 
-	"github.com/gammban/numtow/curtow/cur"
-	"github.com/gammban/numtow/internal/ds"
-	"github.com/gammban/numtow/lang/kz"
-	"github.com/gammban/numtow/lang/ru"
+	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/dantedenis/numtow/lang/kz"
+	"github.com/dantedenis/numtow/lang/ru"
 
-	"github.com/gammban/numtow/lang"
+	"github.com/dantedenis/numtow/lang"
 )
 
 //nolint:gochecknoglobals

@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/gammban/numtow/curtow/cur"
-	"github.com/gammban/numtow/internal/ds"
+	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/internal/ds"
 )
 
 // CurrencyString converts string currency to words or returns error.
-//  en.CurrencyString("1.1", en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
+//
+//	en.CurrencyString("1.1", en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
 func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -22,7 +23,8 @@ func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 }
 
 // CurrencyFloat64 converts string currency to words or returns error.
-//  en.CurrencyFloat64(1.1, en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
+//
+//	en.CurrencyFloat64(1.1, en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
 func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 

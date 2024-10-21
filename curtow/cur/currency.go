@@ -19,6 +19,8 @@ const (
 	RUB
 	// EUR - Euro
 	EUR
+	// GBP - Great Britain Pound
+	GBP
 )
 
 const (
@@ -26,6 +28,7 @@ const (
 	CodeUSD = "USD"
 	CodeRUB = "RUB"
 	CodeEUR = "EUR"
+	CodeGBP = "GBP"
 )
 
 var (
@@ -33,7 +36,8 @@ var (
 )
 
 // String return code of currency
-//  USD.String() // "USD"
+//
+//	USD.String() // "USD"
 func (c Currency) String() string {
 	switch c {
 	case KZT:
@@ -44,6 +48,8 @@ func (c Currency) String() string {
 		return CodeUSD
 	case EUR:
 		return CodeEUR
+	case GBP:
+		return CodeGBP
 	case Unknown:
 		return ""
 	default:
@@ -62,6 +68,8 @@ func ParseCurrency(s string) Currency {
 		return RUB
 	case CodeEUR:
 		return EUR
+	case CodeGBP:
+		return GBP
 	default:
 		return Unknown
 	}
@@ -90,7 +98,7 @@ func (c Currency) ISO4217() *ISO4217 {
 // Validate validates currency. In case of invalid currency returns ErrBadCurrency.
 func (c Currency) Validate() error {
 	switch c {
-	case KZT, RUB, USD, EUR:
+	case KZT, RUB, USD, EUR, GBP:
 		return nil
 	case Unknown:
 		return ErrBadCurrency

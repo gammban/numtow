@@ -5,19 +5,21 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gammban/numtow/internal/digit"
-	"github.com/gammban/numtow/internal/ds"
-	"github.com/gammban/numtow/internal/triplet"
+	"github.com/dantedenis/numtow/internal/digit"
+	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/dantedenis/numtow/internal/triplet"
 )
 
-//nolint:gocyclo
 // convert DigitalString to english words
-// 	Examples:
-// 	ds.Empty -> ""
-// 	ds.Zero -> "zero"
-// 	ds.New(1) -> "one"
-// 	ds.New(100) -> "one hundred"
-// 	ds.New(0, 0, 0, 0, 0, 2) -> "two"
+//
+//	Examples:
+//	ds.Empty -> ""
+//	ds.Zero -> "zero"
+//	ds.New(1) -> "one"
+//	ds.New(100) -> "one hundred"
+//	ds.New(0, 0, 0, 0, 0, 2) -> "two"
+//
+//nolint:gocyclo
 func convert(d ds.DigitString, options ...OptFunc) (result string, err error) {
 	o := prepareOptions(options...)
 

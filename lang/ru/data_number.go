@@ -1,8 +1,8 @@
 package ru
 
 import (
-	"github.com/gammban/numtow/internal/digit"
-	"github.com/gammban/numtow/lang/ru/gender"
+	"github.com/dantedenis/numtow/internal/digit"
+	"github.com/dantedenis/numtow/lang/ru/gender"
 )
 
 const (
@@ -11,7 +11,7 @@ const (
 	sep   = " "
 )
 
-//nolint
+// nolint
 var (
 	// единицы
 	unitsMale   = [10]string{"", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"} // мужской род

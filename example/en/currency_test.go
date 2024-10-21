@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/gammban/numtow/curtow"
-	"github.com/gammban/numtow/curtow/cur"
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/en"
+	"github.com/dantedenis/numtow/curtow"
+	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/en"
+	"github.com/dantedenis/numtow/lang/ru"
 )
 
 func TestCurrencyEN(t *testing.T) {
@@ -15,6 +16,12 @@ func TestCurrencyEN(t *testing.T) {
 	fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD)))                           // twelve dollars and 00 cents
 	fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD), en.WithCurIgnoreMU(true))) // twelve dollars
 	fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD), en.WithCurConvMU(true)))   // twelve dollars and zero cents
+	fmt.Println(curtow.MustString("12.12", lang.EN, en.WithCur(cur.GBP)))
+	fmt.Println(curtow.MustString("12.12", lang.RU, ru.WithCur(cur.GBP)))
+	fmt.Println(curtow.MustString("12.03", lang.EN, en.WithCur(cur.GBP)))
+	fmt.Println(curtow.MustString("12.03", lang.RU, ru.WithCur(cur.GBP)))
+	fmt.Println(curtow.MustString(fmt.Sprintf("%.2f", 12.031), lang.EN, en.WithCur(cur.GBP)))
+	fmt.Println(curtow.MustString(fmt.Sprintf("%.2f", 12.001), lang.EN, en.WithCur(cur.GBP)))
 
 	res, err := en.CurrencyString("53241", en.WithCur(cur.EUR))
 	if err != nil {

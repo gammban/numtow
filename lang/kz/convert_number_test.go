@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gammban/numtow/internal/testdata"
+	"github.com/dantedenis/numtow/internal/testdata"
 )
 
 func TestFloat64_Opts(t *testing.T) {

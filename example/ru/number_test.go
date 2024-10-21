@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/gammban/numtow"
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/ru"
-	"github.com/gammban/numtow/lang/ru/gender"
+	"github.com/dantedenis/numtow"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/ru"
+	"github.com/dantedenis/numtow/lang/ru/gender"
 )
 
 func TestRu(t *testing.T) {

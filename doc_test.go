@@ -3,10 +3,10 @@ package numtow
 import (
 	"fmt"
 
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/en"
-	"github.com/gammban/numtow/lang/ru"
-	"github.com/gammban/numtow/lang/ru/gender"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/en"
+	"github.com/dantedenis/numtow/lang/ru"
+	"github.com/dantedenis/numtow/lang/ru/gender"
 )
 
 func ExampleMustString_default() {

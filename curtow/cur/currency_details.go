@@ -33,4 +33,10 @@ var details = map[Currency]ISO4217{
 		NumericCode:    978,
 		MinorUnits:     MinorUnits2,
 	},
+	GBP: {
+		Name:           "Great Britain Pound",
+		AlphabeticCode: "GBP",
+		NumericCode:    826,
+		MinorUnits:     MinorUnits2,
+	},
 }

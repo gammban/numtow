@@ -1,10 +1,10 @@
 package curtow
 
 import (
-	"github.com/gammban/numtow/lang"
-	"github.com/gammban/numtow/lang/en"
-	"github.com/gammban/numtow/lang/kz"
-	"github.com/gammban/numtow/lang/ru"
+	"github.com/dantedenis/numtow/lang"
+	"github.com/dantedenis/numtow/lang/en"
+	"github.com/dantedenis/numtow/lang/kz"
+	"github.com/dantedenis/numtow/lang/ru"
 )
 
 // Float64 converts amount to words

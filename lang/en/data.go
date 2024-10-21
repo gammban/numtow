@@ -1,6 +1,6 @@
 package en
 
-import "github.com/gammban/numtow/curtow/cur"
+import "github.com/dantedenis/numtow/curtow/cur"
 
 const (
 	minus       = "minus"
@@ -50,6 +50,12 @@ var (
 			Plural:       "euros",
 			UnitSingular: "cent",
 			UnitPlural:   "cents",
+		},
+		cur.GBP: {
+			Singular:     "pound",
+			Plural:       "pounds",
+			UnitSingular: "penny",
+			UnitPlural:   "pence",
 		},
 	}
 )

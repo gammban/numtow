@@ -1,7 +1,7 @@
 package kz
 
 import (
-	"github.com/gammban/numtow/curtow/cur"
+	"github.com/dantedenis/numtow/curtow/cur"
 )
 
 type CurrencyOptions struct {
