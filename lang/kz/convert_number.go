@@ -1,7 +1,7 @@
 package kz
 
 import (
-	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/gammban/numtow/internal/ds"
 )
 
 // Float64 converts float64 to words or returns error.

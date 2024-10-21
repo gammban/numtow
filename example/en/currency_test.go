@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dantedenis/numtow/curtow"
-	"github.com/dantedenis/numtow/curtow/cur"
-	"github.com/dantedenis/numtow/lang"
-	"github.com/dantedenis/numtow/lang/en"
-	"github.com/dantedenis/numtow/lang/ru"
+	"github.com/gammban/numtow/curtow"
+	"github.com/gammban/numtow/curtow/cur"
+	"github.com/gammban/numtow/lang"
+	"github.com/gammban/numtow/lang/en"
+	"github.com/gammban/numtow/lang/ru"
 )
 
 func TestCurrencyEN(t *testing.T) {

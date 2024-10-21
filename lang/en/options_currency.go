@@ -1,6 +1,6 @@
 package en
 
-import "github.com/dantedenis/numtow/curtow/cur"
+import "github.com/gammban/numtow/curtow/cur"
 
 type CurrencyOptions struct {
 	currency          cur.Currency

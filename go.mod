@@ -1,3 +1,3 @@
-module github.com/dantedenis/numtow
+module github.com/gammban/numtow
 
 go 1.15

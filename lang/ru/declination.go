@@ -1,8 +1,8 @@
 package ru
 
 import (
-	"github.com/dantedenis/numtow/internal/digit"
-	"github.com/dantedenis/numtow/internal/triplet"
+	"github.com/gammban/numtow/internal/digit"
+	"github.com/gammban/numtow/internal/triplet"
 )
 
 type Declination int

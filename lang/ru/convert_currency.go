@@ -3,8 +3,8 @@ package ru
 import (
 	"strings"
 
-	"github.com/dantedenis/numtow/curtow/cur"
-	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/gammban/numtow/curtow/cur"
+	"github.com/gammban/numtow/internal/ds"
 )
 
 // CurrencyString converts string currency to russian words or returns error.

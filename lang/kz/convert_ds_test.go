@@ -3,8 +3,8 @@ package kz
 import (
 	"testing"
 
-	"github.com/dantedenis/numtow/internal/digit"
-	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/gammban/numtow/internal/digit"
+	"github.com/gammban/numtow/internal/ds"
 )
 
 func TestConvert(t *testing.T) {

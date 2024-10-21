@@ -3,7 +3,7 @@ package triplet
 import (
 	"errors"
 
-	"github.com/dantedenis/numtow/internal/digit"
+	"github.com/gammban/numtow/internal/digit"
 )
 
 type Triplet struct {

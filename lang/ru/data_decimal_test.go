@@ -3,7 +3,7 @@ package ru
 import (
 	"testing"
 
-	"github.com/dantedenis/numtow/lang/ru/gender"
+	"github.com/gammban/numtow/lang/ru/gender"
 )
 
 func TestGetFracPart(t *testing.T) {

@@ -1,6 +1,6 @@
 package en
 
-import "github.com/dantedenis/numtow/internal/ds"
+import "github.com/gammban/numtow/internal/ds"
 
 // Float64 converts float64 number to english words or returns error.
 //

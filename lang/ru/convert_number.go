@@ -1,7 +1,7 @@
 package ru
 
 import (
-	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/gammban/numtow/internal/ds"
 )
 
 // MustInt64 converts int64 number to russian words or returns empty string.

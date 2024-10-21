@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/dantedenis/numtow/curtow/cur"
+	"github.com/gammban/numtow/curtow/cur"
 )
 
 func TestCurrencyString(t *testing.T) {

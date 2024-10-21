@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/dantedenis/numtow/internal/digit"
-	"github.com/dantedenis/numtow/internal/triplet"
+	"github.com/gammban/numtow/internal/digit"
+	"github.com/gammban/numtow/internal/triplet"
 )
 
 // DigitString holds slice of digits (digit.Digit) and minus sign.

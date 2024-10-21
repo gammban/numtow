@@ -3,7 +3,7 @@ package ru
 import (
 	"testing"
 
-	"github.com/dantedenis/numtow/internal/triplet"
+	"github.com/gammban/numtow/internal/triplet"
 )
 
 //nolint:gochecknoglobals

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/dantedenis/numtow/internal/digit"
-	"github.com/dantedenis/numtow/internal/ds"
+	"github.com/gammban/numtow/internal/digit"
+	"github.com/gammban/numtow/internal/ds"
 )
 
 // convert returns DigitString in kazakh
