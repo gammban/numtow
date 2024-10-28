@@ -16,7 +16,7 @@ var (
 				DeclinationSingular: "тенге",
 				Declination234:      "тенге",
 			},
-			NameGender: gender.Female,
+			NameGender: gender.Male,
 			UnitName: map[Declination]string{
 				DeclinationPlural:   "тиын",
 				DeclinationSingular: "тиын",
