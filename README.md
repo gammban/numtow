@@ -125,6 +125,18 @@ fmt.Println(res) // жүз жиырма бес теңге 53 тиын
 - EUR
 - KZT
 - RUB
+- GBP
+- CHF
+- CAD
+- JPY
+- CNY
+- AUD
+- AED
+- TRY
+- KGS
+- ZAR
+- NOK
+- SEK
 
 ## Supported languages
 
