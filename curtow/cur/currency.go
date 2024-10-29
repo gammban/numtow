@@ -172,6 +172,13 @@ func (c Currency) ISO4217() *ISO4217 {
 	return nil
 }
 
+func CurrencyByIsoCode(code uint16) Currency {
+	if k, ok := detailsIso[code]; ok {
+		return k
+	}
+	return Unknown
+}
+
 // Validate validates currency. In case of invalid currency returns ErrBadCurrency.
 func (c Currency) Validate() error {
 	switch c {

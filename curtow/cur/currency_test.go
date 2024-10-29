@@ -135,7 +135,7 @@ func TestCurrency_ISO4217(t *testing.T) {
 
 func TestCurrency_castISO(t *testing.T) {
 	for k, v := range details {
-		if d := detailsIso[v.NumericCode]; d != k {
+		if d := CurrencyByIsoCode(v.NumericCode); d != k {
 			t.Errorf("got: %v, expected %v", d, k)
 		}
 	}
