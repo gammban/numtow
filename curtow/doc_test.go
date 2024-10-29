@@ -19,6 +19,6 @@ func ExampleMustString_usd() {
 }
 
 func ExampleMustString_usd_skip_and() {
-	fmt.Println(MustString("2345.57", lang.EN, en.WithCur(cur.USD), en.WithCurConvMU(true), en.WithIgnoreAnd(true)))
-	// Output: two thousand, three hundred forty-five dollars fifty-seven cents
+	fmt.Println(MustString("2345.57", lang.EN, en.WithCur(cur.USD), en.WithCurConvMU(true), en.WithIgnoreAnd(true), en.WithCurGroupSep("")))
+	// Output: two thousand three hundred forty-five dollars fifty-seven cents
 }

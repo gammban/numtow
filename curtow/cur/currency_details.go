@@ -106,3 +106,22 @@ var details = map[Currency]ISO4217{
 		MinorUnits:     MinorUnits2,
 	},
 }
+
+var detailsIso = map[uint16]Currency{
+	398: KZT,
+	643: RUB,
+	840: USD,
+	978: EUR,
+	826: GBP,
+	756: CHF,
+	124: CAD,
+	392: JPY,
+	156: CNY,
+	036: AUD,
+	784: AED,
+	949: TRY,
+	417: KGS,
+	710: ZAR,
+	578: NOK,
+	752: SEK,
+}
