@@ -65,7 +65,12 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 
 	sb := strings.Builder{}
 
-	intPartWords, err := convert(intDS)
+	var cOpts []OptFunc
+	if o.ignoreAnd {
+		cOpts = append(cOpts, WithFmtAndSep(""))
+	}
+
+	intPartWords, err := convert(intDS, cOpts...)
 	if err != nil {
 		return words, err
 	}
@@ -96,8 +101,11 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 		fracWords = fracDS.String()
 	}
 
-	sb.WriteString(and)
-	sb.WriteString(sep)
+	if !o.ignoreAnd {
+		sb.WriteString(and)
+		sb.WriteString(sep)
+	}
+
 	sb.WriteString(fracWords)
 	sb.WriteString(sep)
 

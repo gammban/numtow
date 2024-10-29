@@ -63,7 +63,7 @@ func convert(d ds.DigitString, options ...OptFunc) (result string, err error) {
 			sb.WriteString(sep)
 		}
 
-		// разделительное and между тысяными: 108 -> one hundred and eight
+		// разделительное and между тысячными: 108 -> one hundred and eight
 		if o.Format.AndWord != "" && t.Hundreds().IsNotZero() && !isTensAndUnitsZero {
 			sb.WriteString(o.Format.AndWord)
 			sb.WriteString(sep)

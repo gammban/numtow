@@ -6,6 +6,7 @@ type CurrencyOptions struct {
 	currency          cur.Currency
 	ignoreMinorUnits  bool
 	convertMinorUnits bool
+	ignoreAnd         bool
 }
 
 const (
@@ -13,6 +14,12 @@ const (
 )
 
 type CurrencyOpt func(o *CurrencyOptions)
+
+func WithIgnoreAnd(ignore bool) CurrencyOpt {
+	return func(o *CurrencyOptions) {
+		o.ignoreAnd = ignore
+	}
+}
 
 func WithCur(c cur.Currency) CurrencyOpt {
 	return func(o *CurrencyOptions) {
