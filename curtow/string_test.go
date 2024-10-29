@@ -263,7 +263,11 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD)},
-		wantAmount: "nine hundred sixty-four thousand, nine hundred thirteen dollars 39 cents",
+		wantAmount: "nine hundred and sixty-four thousand, nine hundred and thirteen dollars and 39 cents",
+	},
+	{
+		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD), en.WithIgnoreAnd(true), en.WithCurGroupSep("")},
+		wantAmount: "nine hundred sixty-four thousand nine hundred thirteen dollars 39 cents",
 	},
 }
 
