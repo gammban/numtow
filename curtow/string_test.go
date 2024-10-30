@@ -235,7 +235,7 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.KZ, giveOpts: []interface{}{kz.WithCur(cur.EUR), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},
-		wantAmount: "тоғыз жүз алпыс төрт мың тоғыз жүз он үш еуро отыз тоғыз евроцент",
+		wantAmount: "тоғыз жүз алпыс төрт мың тоғыз жүз он үш еуро отыз тоғыз еуроцент",
 	},
 	{
 		giveAmountString: "4.39", giveAmountFloat64: 4.39, giveLang: lang.KZ, giveOpts: []interface{}{kz.WithCur(cur.RUB), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},

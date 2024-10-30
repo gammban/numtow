@@ -28,5 +28,5 @@ func TestCurrencyEN(t *testing.T) {
 		fmt.Println(err)
 	}
 
-	fmt.Println(res) // fifty-three thousand, two hundred and forty-one euros and 00 cents
+	fmt.Println(res) // fifty-three thousand, two hundred and forty-one euros and 00 eurocents
 }

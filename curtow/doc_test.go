@@ -10,7 +10,7 @@ import (
 
 func ExampleMustString_eur() {
 	fmt.Println(MustString("12", lang.EN, en.WithCur(cur.EUR)))
-	// Output: twelve euros and 00 cents
+	// Output: twelve euros and 00 eurocents
 }
 
 func ExampleMustString_usd() {

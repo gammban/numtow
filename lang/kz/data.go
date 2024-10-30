@@ -73,7 +73,7 @@ var (
 		cur.KZT: "тиын",
 		cur.RUB: "тиын",
 		cur.USD: "цент",
-		cur.EUR: "евроцент",
+		cur.EUR: "еуроцент",
 		cur.GBP: "пенсы",
 		cur.CHF: "раппены",
 		cur.CAD: "цент",

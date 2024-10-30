@@ -48,8 +48,8 @@ var (
 		cur.EUR: {
 			Singular:     "euro",
 			Plural:       "euros",
-			UnitSingular: "cent",
-			UnitPlural:   "cents",
+			UnitSingular: "eurocent",
+			UnitPlural:   "eurocents",
 		},
 		cur.GBP: {
 			Singular:     "pound",
