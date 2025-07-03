@@ -1,6 +1,6 @@
 package testdata
 
-//nolint":gochecknoglobals
+// nolint":gochecknoglobals
 // тесты для женского рода
 var TestCaseLangRUDecimalStringGenderFemale = map[string]string{
 	"00000.001":     "ноль целых одна тысячная",
@@ -33,7 +33,7 @@ var TestCaseLangRUDecimalStringGenderFemale = map[string]string{
 	"1.000345":      "Одна целая триста сорок пять миллионных",
 }
 
-//nolint":gochecknoglobals
+// nolint":gochecknoglobals
 // тесты для мужского рода
 var TestCaseLangRUDecimalStringGenderMale = map[string]string{
 	"32.32": "Тридцать два целых тридцать две сотых", // Тридцать два целых тридцать две сотых квадратных метра
@@ -43,7 +43,7 @@ var TestCaseLangRUDecimalStringGenderMale = map[string]string{
 	"0.1":   "Ноль целых одна десятая",
 }
 
-//nolint":gochecknoglobals
+// nolint":gochecknoglobals
 // тесты для среднего рода
 var TestCaseLangRUDecimalStringGenderNeuter = map[string]string{
 	"1231":  "Одна тысяча двести тридцать одно", // Одна тысяча двести тридцать одно сообщение

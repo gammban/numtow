@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for ParseDecimal
 var testCaseParseDecimal = []struct {
 	giveDec  string
 	giveExp  uint
@@ -81,7 +81,7 @@ func TestParseDecimal(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for ParseInt64
 var testCaseParseInt64 = []struct {
 	give       int64
 	wantString string
@@ -112,7 +112,7 @@ func TestParseInt64(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for ParseString
 var testCaseParseString = []struct {
 	give       string
 	wantString string
@@ -145,7 +145,7 @@ func TestParseString(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for ParseFloat64
 var testCaseParseFloat64 = []struct {
 	giveFloat64 float64
 	giveExp     uint

@@ -19,7 +19,7 @@ type currencyInfo struct {
 	UnitPlural   string
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals,exhaustive // fp
 var (
 	megs  = [16]string{"", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion"}
 	units = [10]string{"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}

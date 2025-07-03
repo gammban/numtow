@@ -6,7 +6,7 @@ import (
 	"github.com/gammban/numtow/internal/triplet"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseDeclination = []struct {
 	giveTriplet     triplet.Triplet
 	wantDeclination Declination

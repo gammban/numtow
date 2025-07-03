@@ -19,7 +19,7 @@ import (
 //	ds.New(100) -> "one hundred"
 //	ds.New(0, 0, 0, 0, 0, 2) -> "two"
 //
-//nolint:gocyclo
+//nolint:gocyclo // fp
 func convert(d ds.DigitString, options ...OptFunc) (result string, err error) {
 	o := prepareOptions(options...)
 

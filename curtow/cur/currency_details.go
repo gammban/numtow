@@ -7,7 +7,7 @@ type ISO4217 struct {
 	MinorUnits     MinorUnits
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals,mnd,exhaustive // Currency details
 var details = map[Currency]ISO4217{
 	KZT: {
 		Name:           "Tenge",
@@ -107,6 +107,7 @@ var details = map[Currency]ISO4217{
 	},
 }
 
+//nolint:gochecknoglobals // ISO 4217 numeric codes
 var detailsIso = map[uint16]Currency{
 	398: KZT,
 	643: RUB,

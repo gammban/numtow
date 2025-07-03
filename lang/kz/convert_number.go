@@ -59,7 +59,7 @@ func MustString(decimal string, options ...OptFunc) string {
 // Int64 converts int64 to words or returns error.
 //
 //	result, err := Int64(1) // result: бiр
-func Int64(number int64, options ...OptFunc) (result string, err error) {
+func Int64(number int64, _ ...OptFunc) (result string, err error) {
 	return convert(ds.ParseInt64(number))
 }
 

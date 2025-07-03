@@ -14,7 +14,7 @@ type DigitString struct {
 	IsSignMinus bool
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // fp
 var (
 	// Empty DigitString
 	Empty = DigitString{}
@@ -30,9 +30,7 @@ func New(d ...digit.Digit) DigitString {
 
 	data := make([]digit.Digit, 0, len(d))
 
-	for i := range d {
-		data = append(data, d[i])
-	}
+	data = append(data, d...)
 
 	return DigitString{DS: data}
 }

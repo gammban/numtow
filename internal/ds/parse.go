@@ -198,7 +198,7 @@ func splitDecimal(number, sep string, fracLen uint) (intPart, fracPart string, e
 		fracPart = ""
 
 		if fracLen != 0 {
-			fracPart = strings.Repeat("0", int(fracLen))
+			fracPart = strings.Repeat("0", int(fracLen)) //nolint:gosec // fp G115
 		}
 	case splitParts2:
 		intPart = ss[0]

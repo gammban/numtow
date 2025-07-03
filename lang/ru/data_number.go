@@ -11,7 +11,7 @@ const (
 	sep   = " "
 )
 
-// nolint
+//nolint:gochecknoglobals // fp
 var (
 	// единицы
 	unitsMale   = [10]string{"", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"} // мужской род

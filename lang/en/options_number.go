@@ -7,7 +7,7 @@ const (
 	defaultFormatAndWord         = and
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // default options for number formatting and parsing
 var (
 	FormatDefault = []OptFunc{
 		WithParseSep(defaultParseDecimalSeparator),

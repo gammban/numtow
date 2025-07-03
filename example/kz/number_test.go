@@ -10,7 +10,7 @@ import (
 	"github.com/gammban/numtow/lang/kz"
 )
 
-func TestKz(t *testing.T) {
+func TestKz(_ *testing.T) {
 	// convert number to kazakh using numtow package
 	fmt.Println(numtow.MustString("1", lang.KZ)) // бір
 	fmt.Println(numtow.MustString("2", lang.KZ)) // екі

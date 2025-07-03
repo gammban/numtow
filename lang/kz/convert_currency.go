@@ -89,7 +89,7 @@ func convCurrency(intDS, fracDS ds.DigitString, c cur.Currency, hideMU, convMU b
 		return words, fmt.Errorf("%w: mu not implemented", cur.ErrBadCurrency)
 	}
 
-	fracWords := ""
+	var fracWords string
 
 	if convMU {
 		fracWords, err = convert(fracDS)

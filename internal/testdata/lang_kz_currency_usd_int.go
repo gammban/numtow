@@ -1,6 +1,6 @@
 package testdata
 
-//nolint
+// nolint
 var TestCaseLangKZCurrencyUSDInt = map[int64]string{
 	1:                  "бір АҚШ доллары",
 	98:                 "тоқсан сегіз АҚШ доллары",

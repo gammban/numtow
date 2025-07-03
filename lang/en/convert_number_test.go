@@ -9,7 +9,7 @@ import (
 	"github.com/gammban/numtow/internal/ds"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for decimal numbers
 var (
 	testCaseDecimal = []struct {
 		GiveString  string

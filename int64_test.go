@@ -13,7 +13,7 @@ import (
 	"github.com/gammban/numtow/lang/ru/gender"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseIntNumbers = []struct {
 	GiveInt    string
 	GiveInt64  int64

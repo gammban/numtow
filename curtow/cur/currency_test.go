@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseString = []struct {
 	give Currency
 	want string
@@ -27,7 +27,7 @@ func TestLang_String(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseParseCur = []struct {
 	give string
 	want Currency
@@ -48,7 +48,7 @@ func TestLang_ParseCurrency(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseValidateCur = []struct {
 	giveCurrency Currency
 	wantErr      error
@@ -69,7 +69,7 @@ func TestCurrency_Validate(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseMinorUnitsCur = []struct {
 	giveCurrency   Currency
 	wantMinorUnits MinorUnits
@@ -92,7 +92,7 @@ func TestCurrency_MinorUnits(t *testing.T) {
 	}
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseISO4217 = []struct {
 	giveCurrency Currency
 	want         *ISO4217

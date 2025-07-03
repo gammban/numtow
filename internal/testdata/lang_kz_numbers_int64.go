@@ -1,6 +1,6 @@
 package testdata
 
-//nolint
+// nolint
 var (
 	TestCaseLangKZNumbersInt64 = map[int64]string{
 		-88:                "минус сексен сегіз",

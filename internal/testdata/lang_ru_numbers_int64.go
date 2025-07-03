@@ -1,6 +1,6 @@
 package testdata
 
-//nolint
+// nolint
 var (
 	TestCaseLangRUNumbersInt64GenderFemale = map[int64]string{
 		0:                  "ноль",

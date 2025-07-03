@@ -21,7 +21,7 @@ type Options struct {
 	FmtFracUseDigits bool
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // Default options for russian language.
 var (
 	FormatDefault = []OptFunc{
 		WithFmtGender(gender.Female),

@@ -7,7 +7,7 @@ import (
 	"github.com/gammban/numtow/internal/digit"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for DigitString.Split method
 var testCaseDSSplit = []struct {
 	giveDS     DigitString
 	needString string
@@ -89,7 +89,7 @@ func TestDigitString_FirstTriplet(t *testing.T) {
 
 	emptyDS := DigitString{}
 
-	tr, err = emptyDS.FirstTriplet()
+	_, err = emptyDS.FirstTriplet()
 	if err == nil {
 		t.Fatal("expected error")
 	}

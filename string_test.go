@@ -14,7 +14,7 @@ import (
 	"github.com/gammban/numtow/lang/ru"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseDecimalNumbers = []struct {
 	GiveDecimal string
 	GiveFloat64 float64

@@ -9,7 +9,7 @@ const (
 	fracPartLen   = 15
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // Fractional part names for russian language.
 var (
 	fracPartMale = [fracPartLen]string{
 		"", "десятых", "сотых",

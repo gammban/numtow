@@ -18,7 +18,7 @@ import (
 //	"-1" -> "минус бір"
 //	"1" -> "бір"
 //
-//nolint:gocyclo
+//nolint:gocyclo // fp
 func convert(d ds.DigitString) (result string, err error) {
 	if d.IsEmpty() {
 		return "", nil

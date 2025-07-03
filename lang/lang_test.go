@@ -2,7 +2,7 @@ package lang
 
 import "testing"
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for Lang.String method
 var testCaseString = []struct {
 	give Lang
 	want string

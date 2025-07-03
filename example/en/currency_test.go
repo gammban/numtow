@@ -11,7 +11,7 @@ import (
 	"github.com/gammban/numtow/lang/ru"
 )
 
-func TestCurrencyEN(t *testing.T) {
+func TestCurrencyEN(_ *testing.T) {
 	// convert currency to english words using curtow package
 	fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD)))                           // twelve dollars and 00 cents
 	fmt.Println(curtow.MustString("12", lang.EN, en.WithCur(cur.USD), en.WithCurIgnoreMU(true))) // twelve dollars

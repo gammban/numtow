@@ -4,7 +4,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/gammban/numtow)](https://goreportcard.com/report/github.com/gammban/numtow)
 [![codecov](https://codecov.io/gh/gammban/numtow/branch/main/graph/badge.svg)](https://codecov.io/gh/gammban/numtow)
 
-golang library to convert number to words, currencies to words. 
+golang library to convert number to words, currencies to words.
 
 ## Import
 
@@ -80,6 +80,7 @@ fmt.Println(en.MustString("-1234567.89", en.FormatWithoutAnd...))               
 ```
 
 build your own format
+
 ```go
 // using your own format
 var MyFormat = []en.OptFunc{

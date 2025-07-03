@@ -10,7 +10,7 @@ import (
 	"github.com/gammban/numtow/internal/ds"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for convert
 var testCaseConvertDS = []struct {
 	GiveDS          ds.DigitString
 	GiveFmtGroupSep string
@@ -113,7 +113,7 @@ func TestConvt(t *testing.T) {
 	t.Log(res)
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases for convertDecimal
 var testCaseConvertDecimal = []struct {
 	GiveIntDS  ds.DigitString
 	GiveFracDS ds.DigitString

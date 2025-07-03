@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCaseMU = []struct {
 	giveMU          MinorUnits
 	wantString      string

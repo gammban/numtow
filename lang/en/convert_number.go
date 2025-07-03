@@ -56,10 +56,10 @@ func MustString(decimal string, options ...OptFunc) string {
 	return result
 }
 
-// Int64 converts int64 number to english words or returns error.
+// Int64 converts the number to english words or returns error.
 //
 //	result, err := en.Int64(1) // result: one
-func Int64(num int64, options ...OptFunc) (result string, err error) {
+func Int64(num int64, _ ...OptFunc) (result string, err error) {
 	return convert(ds.ParseInt64(num))
 }
 

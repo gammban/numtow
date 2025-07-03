@@ -9,7 +9,7 @@ import (
 	"github.com/gammban/numtow/lang/en"
 )
 
-func TestEn(t *testing.T) {
+func TestEn(_ *testing.T) {
 	// convert number to english using numtow package
 	fmt.Println(numtow.MustString("12", lang.EN))                           // twelve
 	fmt.Println(numtow.MustString("8691705", lang.EN, en.FormatDefault))    // eight million, six hundred and ninety-one thousand, seven hundred and five

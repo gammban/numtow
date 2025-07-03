@@ -10,7 +10,7 @@ import (
 	"github.com/gammban/numtow/lang/ru/gender"
 )
 
-func TestRu(t *testing.T) {
+func TestRu(_ *testing.T) {
 	// convert number to russian using numtow package
 	fmt.Println(numtow.MustString("1", lang.RU))                                 // одна
 	fmt.Println(numtow.MustString("2", lang.RU))                                 // две

@@ -69,6 +69,7 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 	if o.ignoreAnd {
 		cOpts = append(cOpts, WithFmtAndSep(""))
 	}
+
 	cOpts = append(cOpts, WithFmtGroupSep(o.groupSep))
 
 	intPartWords, err := convert(intDS, cOpts...)
@@ -91,7 +92,7 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 		return strings.TrimSpace(sb.String()), nil
 	}
 
-	fracWords := ""
+	var fracWords string
 
 	if o.convertMinorUnits {
 		fracWords, err = convert(fracDS)

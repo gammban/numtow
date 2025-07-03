@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	//nolint
+	//nolint:gochecknoglobals,exhaustive // fp
 	currencyOpts = map[cur.Currency]currencyInfo{
 		cur.KZT: {
 			Name: map[Declination]string{

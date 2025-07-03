@@ -11,7 +11,7 @@ type Options struct {
 	FmtFracUseDigits bool
 }
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // Default options for kazakh language.
 var (
 	FormatDefault = []OptFunc{
 		WithParseSep(defaultSeparator),

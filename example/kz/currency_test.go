@@ -2,14 +2,15 @@ package kz
 
 import (
 	"fmt"
+	"testing"
+
 	"github.com/gammban/numtow/curtow"
 	"github.com/gammban/numtow/curtow/cur"
 	"github.com/gammban/numtow/lang"
 	"github.com/gammban/numtow/lang/kz"
-	"testing"
 )
 
-func TestCurrencyEN(t *testing.T) {
+func TestCurrencyEN(_ *testing.T) {
 	// convert currency to kazakh words using curtow package
 	fmt.Println(curtow.MustString("12", lang.KZ, kz.WithCur(cur.KZT)))                           // он екі теңге 00 тиын
 	fmt.Println(curtow.MustString("12", lang.KZ, kz.WithCur(cur.KZT), kz.WithCurIgnoreMU(true))) // он екі теңге

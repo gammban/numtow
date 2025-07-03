@@ -95,7 +95,7 @@ func convCurrency(intDS, fracDS ds.DigitString, c cur.Currency, hideMU, convMU b
 
 	unitName := info.GetCurrencyUnitName(getTripletDeclination(fracFirstTriplet))
 
-	fracWords := ""
+	var fracWords string
 
 	if convMU {
 		fracWords, err = convert(fracDS, info.GetCurrencyUnitGender())

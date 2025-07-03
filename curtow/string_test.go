@@ -16,7 +16,7 @@ import (
 	"github.com/gammban/numtow/lang"
 )
 
-//nolint:gochecknoglobals
+//nolint:gochecknoglobals // test cases
 var testCases = []struct {
 	giveAmountString  string
 	giveAmountFloat64 float64

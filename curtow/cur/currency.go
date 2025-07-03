@@ -176,6 +176,7 @@ func CurrencyByIsoCode(code uint16) Currency {
 	if k, ok := detailsIso[code]; ok {
 		return k
 	}
+
 	return Unknown
 }
 

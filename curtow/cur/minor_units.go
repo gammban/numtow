@@ -35,7 +35,8 @@ func (m MinorUnits) String() string {
 }
 
 // Zero returns zero value for minor unit.
-// 	Example: MinorUnits(2).Zero // "00"
+//
+//	Example: MinorUnits(2).Zero // "00"
 func (m MinorUnits) Zero() string {
 	if err := m.Validate(); err != nil {
 		return ""

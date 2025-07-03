@@ -14,7 +14,7 @@ const (
 	tripletIdx2 = 2
 )
 
-//nolint:gocognit,gocyclo
+//nolint:gocognit,gocyclo // fp
 func convert(d ds.DigitString, g gender.Gender) (res string, err error) {
 	var un, tn, h digit.Digit
 
@@ -86,9 +86,9 @@ func convert(d ds.DigitString, g gender.Gender) (res string, err error) {
 			switch i {
 			// до 1 000 - смотрим указанный род
 			case tripletIdx1:
-				unitWord, err := getUnitsByGender(g, un)
-				if err != nil {
-					return res, err
+				unitWord, er := getUnitsByGender(g, un)
+				if er != nil {
+					return res, er
 				}
 
 				if unitWord != "" {
