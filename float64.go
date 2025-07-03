@@ -29,8 +29,18 @@ func Float64(decimal float64, language lang.Lang, options ...interface{}) (words
 	}
 }
 
-// MustFloat64 returns float64 number converted to words or empty string on error.
+// MustFloat64 returns float64 number converted to words or panics on error.
 func MustFloat64(decimal float64, language lang.Lang, options ...interface{}) string {
+	res, err := Float64(decimal, language, options...)
+	if err != nil {
+		panic(err)
+	}
+
+	return res
+}
+
+// Float64OrZero returns float64 number converted to words or empty string on error.
+func Float64OrZero(decimal float64, language lang.Lang, options ...interface{}) string {
 	res, err := Float64(decimal, language, options...)
 	if err != nil {
 		return ""

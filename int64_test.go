@@ -155,9 +155,9 @@ func TestInt64(t *testing.T) {
 	}
 }
 
-func TestMustInt64(t *testing.T) {
+func TestInt64OrZero(t *testing.T) {
 	for _, v := range testCaseIntNumbers {
-		gotResult := MustInt64(v.GiveInt64, v.GiveLang, v.GiveOpts...)
+		gotResult := Int64OrZero(v.GiveInt64, v.GiveLang, v.GiveOpts...)
 		if v.WantErr != nil && gotResult != "" {
 			t.Errorf("%s: expected error", v.GiveInt)
 		}

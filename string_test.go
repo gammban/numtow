@@ -208,9 +208,9 @@ func TestString(t *testing.T) {
 	}
 }
 
-func TestMustString(t *testing.T) {
+func TestStringOrZero(t *testing.T) {
 	for _, v := range testCaseDecimalNumbers {
-		gotResult := MustString(v.GiveDecimal, v.GiveLang, v.GiveOpts...)
+		gotResult := StringOrZero(v.GiveDecimal, v.GiveLang, v.GiveOpts...)
 		if v.WantErr != nil && gotResult != "" {
 			t.Errorf("%s: expected error", v.GiveDecimal)
 		}

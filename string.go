@@ -31,8 +31,18 @@ func String(decimal string, language lang.Lang, options ...interface{}) (words s
 	}
 }
 
-// MustString converts decimal number to words or returns an empty string on error.
+// MustString converts decimal number to words or panics on error.
 func MustString(decimal string, language lang.Lang, options ...interface{}) string {
+	res, err := String(decimal, language, options...)
+	if err != nil {
+		panic(err)
+	}
+
+	return res
+}
+
+// StringOrZero converts decimal number to words or returns an empty string on error.
+func StringOrZero(decimal string, language lang.Lang, options ...interface{}) string {
 	res, err := String(decimal, language, options...)
 	if err != nil {
 		return ""

@@ -21,9 +21,9 @@ func TestFloat64(t *testing.T) {
 	}
 }
 
-func TestMustFloat64(t *testing.T) {
+func TestFloat64OrZero(t *testing.T) {
 	for _, v := range testCaseDecimalNumbers {
-		gotResult := MustFloat64(v.GiveFloat64, v.GiveLang, v.GiveOpts...)
+		gotResult := Float64OrZero(v.GiveFloat64, v.GiveLang, v.GiveOpts...)
 		if v.WantErr != nil && gotResult != "" {
 			t.Errorf("%s: expected error", v.GiveDecimal)
 		}

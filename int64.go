@@ -29,8 +29,18 @@ func Int64(number int64, language lang.Lang, options ...interface{}) (words stri
 	}
 }
 
-// MustInt64 returns float64 number converted to words or empty string on error.
+// MustInt64 returns int64 number converted to words or panics on error.
 func MustInt64(number int64, language lang.Lang, options ...interface{}) string {
+	res, err := Int64(number, language, options...)
+	if err != nil {
+		panic(err)
+	}
+
+	return res
+}
+
+// Int64OrZero returns int64 number converted to words or empty string on error.
+func Int64OrZero(number int64, language lang.Lang, options ...interface{}) string {
 	res, err := Int64(number, language, options...)
 	if err != nil {
 		return ""
