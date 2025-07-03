@@ -7,23 +7,23 @@ import (
 	"github.com/gammban/numtow/curtow/cur"
 )
 
-//nolint:gochecknoglobals
-var (
-	testCaseString = []struct {
-		GiveString    string
-		GiveCurrency  cur.Currency
-		GiveHideMU    bool
-		GiveConvertMU bool
-		WantResult    string
-		WantError     error
-	}{
-		{GiveString: "1", GiveCurrency: cur.USD, GiveHideMU: true, WantResult: "one dollar"},
-		{GiveString: "1.1", GiveCurrency: cur.USD, GiveConvertMU: true, WantResult: "one dollar and ten cents"},
-		{GiveString: "1.0", WantResult: "one dollar and zero cents", GiveCurrency: cur.USD, GiveConvertMU: true},
-	}
-)
-
 func TestCurrencyString(t *testing.T) {
+	var (
+		testCaseString = []struct {
+			GiveString    string
+			GiveCurrency  cur.Currency
+			GiveHideMU    bool
+			GiveConvertMU bool
+			WantResult    string
+			WantError     error
+		}{
+			{GiveString: "1", GiveCurrency: cur.USD, GiveHideMU: true, WantResult: "one dollar"},
+			{GiveString: "1.1", GiveCurrency: cur.USD, GiveConvertMU: true, WantResult: "one dollar and ten cents"},
+			{GiveString: "1.0", WantResult: "one dollar and zero cents", GiveCurrency: cur.USD, GiveConvertMU: true},
+			{GiveString: "1.23", WantResult: "one pound and twenty-three pence", GiveCurrency: cur.GBP, GiveConvertMU: true},
+		}
+	)
+
 	for _, v := range testCaseString {
 		v := v
 

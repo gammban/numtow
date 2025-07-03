@@ -6,6 +6,8 @@ type CurrencyOptions struct {
 	currency          cur.Currency
 	ignoreMinorUnits  bool
 	convertMinorUnits bool
+	ignoreAnd         bool
+	groupSep          string
 }
 
 const (
@@ -13,6 +15,12 @@ const (
 )
 
 type CurrencyOpt func(o *CurrencyOptions)
+
+func WithIgnoreAnd(ignore bool) CurrencyOpt {
+	return func(o *CurrencyOptions) {
+		o.ignoreAnd = ignore
+	}
+}
 
 func WithCur(c cur.Currency) CurrencyOpt {
 	return func(o *CurrencyOptions) {
@@ -32,10 +40,17 @@ func WithCurIgnoreMU(ignore bool) CurrencyOpt {
 	}
 }
 
+func WithCurGroupSep(sep string) CurrencyOpt {
+	return func(o *CurrencyOptions) {
+		o.groupSep = sep
+	}
+}
+
 func prepareCurrencyOptions(o ...CurrencyOpt) *CurrencyOptions {
 	e := &CurrencyOptions{
 		currency:         defaultCurrency,
 		ignoreMinorUnits: false,
+		groupSep:         ",",
 	}
 
 	for _, opt := range o {

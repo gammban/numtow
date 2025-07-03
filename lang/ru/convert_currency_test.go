@@ -137,7 +137,7 @@ func TestConvCurrency_Errors(t *testing.T) {
 		t.Fatal("expected error")
 	}
 
-	_, err = CurrencyString("a", WithCur(cur.Currency(10)))
+	_, err = CurrencyString("a", WithCur(cur.Currency(20)))
 	if err == nil {
 		t.Fatal("expected error")
 	}
@@ -147,7 +147,7 @@ func TestConvCurrency_Errors(t *testing.T) {
 		t.Fatal("expected error")
 	}
 
-	_, err = CurrencyFloat64(123, WithCur(cur.Currency(10)))
+	_, err = CurrencyFloat64(123, WithCur(cur.Currency(20)))
 	if err == nil {
 		t.Fatal("expected error")
 	}

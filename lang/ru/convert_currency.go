@@ -8,8 +8,9 @@ import (
 )
 
 // CurrencyString converts string currency to russian words or returns error.
-//  result, err := ru.CurrencyString("36.72", ru.WithCur(cur.KZT)) // result: "тридцать шесть тенге 72 тиын"
-//  result, err := ru.CurrencyString("19.78", ru.WithCur(cur.RUB)) // result: "девятнадцать рублей 78 копеек"
+//
+//	result, err := ru.CurrencyString("36.72", ru.WithCur(cur.KZT)) // result: "тридцать шесть тенге 72 тиын"
+//	result, err := ru.CurrencyString("19.78", ru.WithCur(cur.RUB)) // result: "девятнадцать рублей 78 копеек"
 func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -22,8 +23,9 @@ func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 }
 
 // CurrencyFloat64 converts float64 currency to russian words or returns error.
-//  result, err := ru.CurrencyFloat64(36.72, ru.WithCur(cur.KZT)) // result: "тридцать шесть тенге 72 тиын"
-//  result, err := ru.CurrencyFloat64(19.78, ru.WithCur(cur.RUB)) // result: "девятнадцать рублей 78 копеек"
+//
+//	result, err := ru.CurrencyFloat64(36.72, ru.WithCur(cur.KZT)) // result: "тридцать шесть тенге 72 тиын"
+//	result, err := ru.CurrencyFloat64(19.78, ru.WithCur(cur.RUB)) // result: "девятнадцать рублей 78 копеек"
 func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 

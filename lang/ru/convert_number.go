@@ -5,9 +5,10 @@ import (
 )
 
 // MustInt64 converts int64 number to russian words or returns empty string.
-//  ru.MustInt64(1) // "одна"
-//  ru.MustInt64(1, ru.WithFmtGender(gender.Male)) // "один"
-//  ru.MustInt64(1, ru.WithFmtGender(gender.Neuter)) // "одно"
+//
+//	ru.MustInt64(1) // "одна"
+//	ru.MustInt64(1, ru.WithFmtGender(gender.Male)) // "один"
+//	ru.MustInt64(1, ru.WithFmtGender(gender.Neuter)) // "одно"
 func MustInt64(number int64, options ...OptFunc) string {
 	result, err := Int64(number, options...)
 	if err != nil {
@@ -18,7 +19,8 @@ func MustInt64(number int64, options ...OptFunc) string {
 }
 
 // Int64 converts int64 number to russian words or returns error.
-//  result, err := ru.Int64(1) // result: "одна"
+//
+//	result, err := ru.Int64(1) // result: "одна"
 func Int64(number int64, options ...OptFunc) (string, error) {
 	e := prepareOptions(options...)
 
@@ -26,8 +28,9 @@ func Int64(number int64, options ...OptFunc) (string, error) {
 }
 
 // Float64 converts float64 number to russian words or returns error.
-//  result, err := ru.Float64(2.54) // result: "две целых пятьдесят четыре сотых"
-//  result, err := ru.Float64(1234567.12345) // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
+//
+//	result, err := ru.Float64(2.54) // result: "две целых пятьдесят четыре сотых"
+//	result, err := ru.Float64(1234567.12345) // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
 func Float64(decimal float64, options ...OptFunc) (result string, err error) {
 	o := prepareOptions(options...)
 
@@ -40,8 +43,9 @@ func Float64(decimal float64, options ...OptFunc) (result string, err error) {
 }
 
 // MustFloat64 converts float64 number to russian words or returns empty string.
-//  result := ru.MustFloat64(2.54) // result: "две целых пятьдесят четыре сотых"
-//  result := ru.MustFloat64(1234567.12345) // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
+//
+//	result := ru.MustFloat64(2.54) // result: "две целых пятьдесят четыре сотых"
+//	result := ru.MustFloat64(1234567.12345) // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
 func MustFloat64(decimal float64, options ...OptFunc) string {
 	result, err := Float64(decimal, options...)
 	if err != nil {
@@ -52,8 +56,9 @@ func MustFloat64(decimal float64, options ...OptFunc) string {
 }
 
 // String converts string number to russian words or returns error.
-//  result, err := ru.String("2.54") // result: "две целых пятьдесят четыре сотых"
-//  result, err := ru.String("1234567.12345") // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
+//
+//	result, err := ru.String("2.54") // result: "две целых пятьдесят четыре сотых"
+//	result, err := ru.String("1234567.12345") // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
 func String(decimal string, options ...OptFunc) (result string, err error) {
 	o := prepareOptions(options...)
 
@@ -66,8 +71,9 @@ func String(decimal string, options ...OptFunc) (result string, err error) {
 }
 
 // MustString converts string number to russian words or returns empty string.
-//  result := ru.MustString("2.54") // result: "две целых пятьдесят четыре сотых"
-//  result := ru.MustString("1234567.12345") // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
+//
+//	result := ru.MustString("2.54") // result: "две целых пятьдесят четыре сотых"
+//	result := ru.MustString("1234567.12345") // result: "один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь целых двенадцать тысяч триста сорок пять стотысячных"
 func MustString(decimal string, options ...OptFunc) string {
 	result, err := String(decimal, options...)
 	if err != nil {

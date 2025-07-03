@@ -9,7 +9,8 @@ import (
 )
 
 // CurrencyString converts string currency to words or returns error.
-//  en.CurrencyString("1.1", en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
+//
+//	en.CurrencyString("1.1", en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
 func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -22,7 +23,8 @@ func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 }
 
 // CurrencyFloat64 converts string currency to words or returns error.
-//  en.CurrencyFloat64(1.1, en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
+//
+//	en.CurrencyFloat64(1.1, en.WithCur(cur.USD), en.WithCurConvMU(true)) // result: "one dollar and ten cents"
 func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -63,7 +65,13 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 
 	sb := strings.Builder{}
 
-	intPartWords, err := convert(intDS)
+	var cOpts []OptFunc
+	if o.ignoreAnd {
+		cOpts = append(cOpts, WithFmtAndSep(""))
+	}
+	cOpts = append(cOpts, WithFmtGroupSep(o.groupSep))
+
+	intPartWords, err := convert(intDS, cOpts...)
 	if err != nil {
 		return words, err
 	}
@@ -94,8 +102,11 @@ func convCurrency(intDS, fracDS ds.DigitString, opts ...CurrencyOpt) (words stri
 		fracWords = fracDS.String()
 	}
 
-	sb.WriteString(and)
-	sb.WriteString(sep)
+	if !o.ignoreAnd {
+		sb.WriteString(and)
+		sb.WriteString(sep)
+	}
+
 	sb.WriteString(fracWords)
 	sb.WriteString(sep)
 

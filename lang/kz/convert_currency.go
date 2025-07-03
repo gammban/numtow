@@ -9,7 +9,8 @@ import (
 )
 
 // CurrencyString converts string currency to words or returns error.
-//  result, err := kz.CurrencyString("317.83", kz.WithCur(cur.KZT)) // result: үш жүз он жеті теңге 83 тиын
+//
+//	result, err := kz.CurrencyString("317.83", kz.WithCur(cur.KZT)) // result: үш жүз он жеті теңге 83 тиын
 func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -22,7 +23,8 @@ func CurrencyString(amount string, o ...CurrencyOpt) (words string, err error) {
 }
 
 // CurrencyFloat64 converts float64 currency to words or returns error.
-//  result, err := kz.CurrencyFloat64(317.83, kz.WithCur(cur.KZT)) // result: үш жүз он жеті теңге 83 тиын
+//
+//	result, err := kz.CurrencyFloat64(317.83, kz.WithCur(cur.KZT)) // result: үш жүз он жеті теңге 83 тиын
 func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 
@@ -35,7 +37,8 @@ func CurrencyFloat64(amount float64, o ...CurrencyOpt) (words string, err error)
 }
 
 // CurrencyInt64 converts int64 currency to words or returns error.
-//  result, err := kz.CurrencyInt64(217, kz.WithCur(cur.EUR)) // result: екі жүз он жеті еуро
+//
+//	result, err := kz.CurrencyInt64(217, kz.WithCur(cur.EUR)) // result: екі жүз он жеті еуро
 func CurrencyInt64(amount int64, o ...CurrencyOpt) (words string, err error) {
 	e := prepareCurrencyOptions(o...)
 

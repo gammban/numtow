@@ -179,7 +179,7 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "1.01", giveAmountFloat64: 1.01, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Одна тенге одна тиын",
+		wantAmount: "Один тенге одна тиын",
 	},
 	{
 		giveAmountString: "3.02", giveAmountFloat64: 3.02, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
@@ -187,7 +187,7 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "2.45", giveAmountFloat64: 2.45, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Две тенге сорок пять тиын",
+		wantAmount: "Два тенге сорок пять тиын",
 	},
 	{
 		giveAmountString: "125545215.45", giveAmountFloat64: 125545215.45, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(false), ru.WithCurIgnoreMU(false)},
@@ -235,7 +235,7 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.KZ, giveOpts: []interface{}{kz.WithCur(cur.EUR), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},
-		wantAmount: "тоғыз жүз алпыс төрт мың тоғыз жүз он үш еуро отыз тоғыз евроцент",
+		wantAmount: "тоғыз жүз алпыс төрт мың тоғыз жүз он үш еуро отыз тоғыз еуроцент",
 	},
 	{
 		giveAmountString: "4.39", giveAmountFloat64: 4.39, giveLang: lang.KZ, giveOpts: []interface{}{kz.WithCur(cur.RUB), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},
@@ -252,6 +252,22 @@ var testCases = []struct {
 	{
 		giveAmountString: "4", giveAmountFloat64: 4, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD)},
 		wantAmount: "four dollars and 00 cents",
+	},
+	{
+		giveAmountString: "4", giveAmountFloat64: 4, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD), en.WithIgnoreAnd(true)},
+		wantAmount: "four dollars 00 cents",
+	},
+	{
+		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD), en.WithIgnoreAnd(true)},
+		wantAmount: "nine hundred sixty-four thousand, nine hundred thirteen dollars 39 cents",
+	},
+	{
+		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD)},
+		wantAmount: "nine hundred and sixty-four thousand, nine hundred and thirteen dollars and 39 cents",
+	},
+	{
+		giveAmountString: "964913.39", giveAmountFloat64: 964913.39, giveLang: lang.EN, giveOpts: []interface{}{en.WithCur(cur.USD), en.WithIgnoreAnd(true), en.WithCurGroupSep("")},
+		wantAmount: "nine hundred sixty-four thousand nine hundred thirteen dollars 39 cents",
 	},
 }
 

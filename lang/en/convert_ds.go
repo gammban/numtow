@@ -10,14 +10,16 @@ import (
 	"github.com/gammban/numtow/internal/triplet"
 )
 
-//nolint:gocyclo
 // convert DigitalString to english words
-// 	Examples:
-// 	ds.Empty -> ""
-// 	ds.Zero -> "zero"
-// 	ds.New(1) -> "one"
-// 	ds.New(100) -> "one hundred"
-// 	ds.New(0, 0, 0, 0, 0, 2) -> "two"
+//
+//	Examples:
+//	ds.Empty -> ""
+//	ds.Zero -> "zero"
+//	ds.New(1) -> "one"
+//	ds.New(100) -> "one hundred"
+//	ds.New(0, 0, 0, 0, 0, 2) -> "two"
+//
+//nolint:gocyclo
 func convert(d ds.DigitString, options ...OptFunc) (result string, err error) {
 	o := prepareOptions(options...)
 
@@ -61,7 +63,7 @@ func convert(d ds.DigitString, options ...OptFunc) (result string, err error) {
 			sb.WriteString(sep)
 		}
 
-		// разделительное and между тысяными: 108 -> one hundred and eight
+		// разделительное and между тысячными: 108 -> one hundred and eight
 		if o.Format.AndWord != "" && t.Hundreds().IsNotZero() && !isTensAndUnitsZero {
 			sb.WriteString(o.Format.AndWord)
 			sb.WriteString(sep)

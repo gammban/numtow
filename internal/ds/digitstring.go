@@ -38,23 +38,25 @@ func New(d ...digit.Digit) DigitString {
 }
 
 // IsEmpty returns true if DigitString is empty
-// 	Examples:
-// 	Empty.IsEmpty() // true
-// 	Zero.IsEmpty() // false
-// 	New().IsEmpty() // true
-// 	New(0).IsEmpty() // false
-// 	New(1, 2, 3).IsEmpty() // false
+//
+//	Examples:
+//	Empty.IsEmpty() // true
+//	Zero.IsEmpty() // false
+//	New().IsEmpty() // true
+//	New(0).IsEmpty() // false
+//	New(1, 2, 3).IsEmpty() // false
 func (ds DigitString) IsEmpty() bool {
 	return len(ds.DS) == 0
 }
 
 // IsZero returns true if DigitString is zero
-// 	Examples:
-// 	Empty.IsZero() // false
-// 	Zero.IsZero() // true
-// 	New(0).IsZero() // true
-// 	New(0, 0, 0, 0, 0, 0).IsZero() // true
-// 	New(1).IsZero() // false
+//
+//	Examples:
+//	Empty.IsZero() // false
+//	Zero.IsZero() // true
+//	New(0).IsZero() // true
+//	New(0, 0, 0, 0, 0, 0).IsZero() // true
+//	New(1).IsZero() // false
 func (ds DigitString) IsZero() bool {
 	if len(ds.DS) == 0 {
 		return false
@@ -70,11 +72,12 @@ func (ds DigitString) IsZero() bool {
 }
 
 // String returns string value of DigitString.
-// 	Examples:
-// 	Empty.String() // ""
-// 	Zero.String() // "0"
-// 	New(1).String() // "1"
-// 	New(1, 2, 3).String() // "123"
+//
+//	Examples:
+//	Empty.String() // ""
+//	Zero.String() // "0"
+//	New(1).String() // "1"
+//	New(1, 2, 3).String() // "123"
 func (ds DigitString) String() string {
 	sb := strings.Builder{}
 
@@ -90,12 +93,13 @@ func (ds DigitString) String() string {
 }
 
 // Validate returns error if DigitString is not valid.
-// 	Examples:
-// 	Empty.Validate() // nil
-// 	Zero.Validate() // nil
-// 	New(10).Validate() // digit.ErrBadDigit
-// 	New(1).Validate() // nil
-// 	New(15).Validate() // digit.ErrBadDigit
+//
+//	Examples:
+//	Empty.Validate() // nil
+//	Zero.Validate() // nil
+//	New(10).Validate() // digit.ErrBadDigit
+//	New(1).Validate() // nil
+//	New(15).Validate() // digit.ErrBadDigit
 func (ds DigitString) Validate() error {
 	for i := range ds.DS {
 		err := ds.DS[i].Validate()
@@ -108,20 +112,22 @@ func (ds DigitString) Validate() error {
 }
 
 // Len returns length of DigitString
-// 	Examples:
-// 	Empty.Len() // 0
-// 	Zero.Len() // 1
-// 	New(1, 2).Len() // 2
+//
+//	Examples:
+//	Empty.Len() // 0
+//	Zero.Len() // 1
+//	New(1, 2).Len() // 2
 func (ds DigitString) Len() int {
 	return len(ds.DS)
 }
 
 // FirstTriplet returns first triplet.
-// 	Examples:
-// 	Empty.FirstTriplet() // error ErrParse
-// 	Zero.FirstTriplet() // triplet.Triplet{0,0,0}
-// 	New(1, 2, 3, 4, 5, 6).FirstTriplet() // triplet.Triplet{4,5,6}
-// 	New(1, 2, 3, 4, 5, 6, 7).FirstTriplet() // triplet.Triplet{5,6,7}
+//
+//	Examples:
+//	Empty.FirstTriplet() // error ErrParse
+//	Zero.FirstTriplet() // triplet.Triplet{0,0,0}
+//	New(1, 2, 3, 4, 5, 6).FirstTriplet() // triplet.Triplet{4,5,6}
+//	New(1, 2, 3, 4, 5, 6, 7).FirstTriplet() // triplet.Triplet{5,6,7}
 func (ds DigitString) FirstTriplet() (t triplet.Triplet, err error) {
 	triplets, err := ds.Split()
 	if err != nil {
@@ -132,12 +138,13 @@ func (ds DigitString) FirstTriplet() (t triplet.Triplet, err error) {
 }
 
 // Split returns valid []Triplet or returns an error
-// 	Examples:
-// 	Empty.Split() // error ErrParse
-// 	Zero.Split() // triplet.Triplet{0,0,0}
-// 	New(1).Split() // triplet.Triplet{0,0,1}
-// 	New(1, 2, 3, 4, 5, 6).Split() // triplet.Triplet{1,2,3}, triplet.Triplet{4,5,6}
-// 	New(1, 2, 3, 4, 5, 6, 7).Split() // triplet.Triplet{0,0,1}, triplet.Triplet{2,3,4}, triplet.Triplet{5,6,7}
+//
+//	Examples:
+//	Empty.Split() // error ErrParse
+//	Zero.Split() // triplet.Triplet{0,0,0}
+//	New(1).Split() // triplet.Triplet{0,0,1}
+//	New(1, 2, 3, 4, 5, 6).Split() // triplet.Triplet{1,2,3}, triplet.Triplet{4,5,6}
+//	New(1, 2, 3, 4, 5, 6, 7).Split() // triplet.Triplet{0,0,1}, triplet.Triplet{2,3,4}, triplet.Triplet{5,6,7}
 func (ds DigitString) Split() (triplet.Triplets, error) {
 	if ds.IsZero() {
 		return []triplet.Triplet{triplet.New(0, 0, 0)}, nil

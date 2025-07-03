@@ -48,8 +48,80 @@ var (
 		cur.EUR: {
 			Singular:     "euro",
 			Plural:       "euros",
+			UnitSingular: "eurocent",
+			UnitPlural:   "eurocents",
+		},
+		cur.GBP: {
+			Singular:     "pound",
+			Plural:       "pounds",
+			UnitSingular: "penny",
+			UnitPlural:   "pence",
+		},
+		cur.CHF: {
+			Singular:     "franc",
+			Plural:       "francs",
+			UnitSingular: "rappen",
+			UnitPlural:   "rappen",
+		},
+		cur.CAD: {
+			Singular:     "Canadian dollar",
+			Plural:       "Canadian dollars",
 			UnitSingular: "cent",
 			UnitPlural:   "cents",
+		},
+		cur.JPY: {
+			Singular:     "yen",
+			Plural:       "yen",
+			UnitSingular: "sen",
+			UnitPlural:   "sen",
+		},
+		cur.CNY: {
+			Singular:     "yuan",
+			Plural:       "yuan",
+			UnitSingular: "jiao",
+			UnitPlural:   "jiao",
+		},
+		cur.AUD: {
+			Singular:     "Australian dollar",
+			Plural:       "Australian dollars",
+			UnitSingular: "cent",
+			UnitPlural:   "cents",
+		},
+		cur.AED: {
+			Singular:     "dirham",
+			Plural:       "dirhams",
+			UnitSingular: "fils",
+			UnitPlural:   "fils",
+		},
+		cur.TRY: {
+			Singular:     "lira",
+			Plural:       "lira",
+			UnitSingular: "kurush",
+			UnitPlural:   "kurush",
+		},
+		cur.KGS: {
+			Singular:     "som",
+			Plural:       "som",
+			UnitSingular: "tiyin",
+			UnitPlural:   "tiyin",
+		},
+		cur.ZAR: {
+			Singular:     "rand",
+			Plural:       "rand",
+			UnitSingular: "cent",
+			UnitPlural:   "cents",
+		},
+		cur.NOK: {
+			Singular:     "krone",
+			Plural:       "krone",
+			UnitSingular: "øre",
+			UnitPlural:   "øre",
+		},
+		cur.SEK: {
+			Singular:     "krone",
+			Plural:       "krone",
+			UnitSingular: "øre",
+			UnitPlural:   "øre",
 		},
 	}
 )

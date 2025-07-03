@@ -58,7 +58,7 @@ var testCaseValidateCur = []struct {
 	{giveCurrency: RUB},
 	{giveCurrency: EUR},
 	{giveCurrency: Unknown, wantErr: ErrBadCurrency},
-	{giveCurrency: Currency(10), wantErr: ErrBadCurrency},
+	{giveCurrency: Currency(20), wantErr: ErrBadCurrency},
 }
 
 func TestCurrency_Validate(t *testing.T) {
@@ -79,7 +79,7 @@ var testCaseMinorUnitsCur = []struct {
 	{giveCurrency: RUB, wantMinorUnits: MinorUnits2},
 	{giveCurrency: EUR, wantMinorUnits: MinorUnits2},
 	{giveCurrency: Unknown, wantMinorUnits: MinorUnitsUnknown},
-	{giveCurrency: Currency(10), wantMinorUnits: MinorUnitsUnknown},
+	{giveCurrency: Currency(20), wantMinorUnits: MinorUnitsUnknown},
 }
 
 func TestCurrency_MinorUnits(t *testing.T) {
@@ -122,13 +122,21 @@ var testCaseISO4217 = []struct {
 		MinorUnits:     MinorUnits2,
 	}},
 	{giveCurrency: Unknown, want: nil},
-	{giveCurrency: Currency(10), want: nil},
+	{giveCurrency: Currency(20), want: nil},
 }
 
 func TestCurrency_ISO4217(t *testing.T) {
 	for _, v := range testCaseISO4217 {
 		if got := v.giveCurrency.ISO4217(); !reflect.DeepEqual(got, v.want) {
 			t.Errorf("got %v, expected %v", got.MinorUnits, v.want)
+		}
+	}
+}
+
+func TestCurrency_castISO(t *testing.T) {
+	for k, v := range details {
+		if d := CurrencyByIsoCode(v.NumericCode); d != k {
+			t.Errorf("got: %v, expected %v", d, k)
 		}
 	}
 }
