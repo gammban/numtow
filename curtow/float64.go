@@ -29,8 +29,18 @@ func Float64(amount float64, language lang.Lang, options ...interface{}) (words 
 	}
 }
 
-// MustFloat64 converts amount to words, on error returns empty string.
+// MustFloat64 converts amount to words, or panics on error.
 func MustFloat64(amount float64, language lang.Lang, options ...interface{}) string {
+	words, err := Float64(amount, language, options...)
+	if err != nil {
+		panic(err)
+	}
+
+	return words
+}
+
+// Float64OrZero converts amount to words, on error returns empty string.
+func Float64OrZero(amount float64, language lang.Lang, options ...interface{}) string {
 	words, err := Float64(amount, language, options...)
 	if err != nil {
 		return ""

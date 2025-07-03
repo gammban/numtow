@@ -29,8 +29,18 @@ func String(amount string, language lang.Lang, options ...interface{}) (words st
 	}
 }
 
-// MustString converts amount to words, on error returns empty string.
+// MustString converts amount to words, or panics on error.
 func MustString(amount string, language lang.Lang, options ...interface{}) string {
+	words, err := String(amount, language, options...)
+	if err != nil {
+		panic(err)
+	}
+
+	return words
+}
+
+// StringOrZero converts amount to words, on error returns empty string.
+func StringOrZero(amount string, language lang.Lang, options ...interface{}) string {
 	words, err := String(amount, language, options...)
 	if err != nil {
 		return ""

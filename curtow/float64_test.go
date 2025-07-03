@@ -20,9 +20,9 @@ func TestFloat64(t *testing.T) {
 	}
 }
 
-func TestMustFloat64(t *testing.T) {
+func TestFloat64OrZero(t *testing.T) {
 	for _, v := range testCases {
-		gotAmount := MustFloat64(v.giveAmountFloat64, v.giveLang, v.giveOpts...)
+		gotAmount := Float64OrZero(v.giveAmountFloat64, v.giveLang, v.giveOpts...)
 		if v.wantErr != nil && gotAmount != "" {
 			t.Errorf("expected empty string got %s", gotAmount)
 			return

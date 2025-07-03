@@ -285,9 +285,9 @@ func TestString(t *testing.T) {
 	}
 }
 
-func TestMustString(t *testing.T) {
+func TestStringOrZero(t *testing.T) {
 	for _, v := range testCases {
-		gotAmount := MustString(v.giveAmountString, v.giveLang, v.giveOpts...)
+		gotAmount := StringOrZero(v.giveAmountString, v.giveLang, v.giveOpts...)
 		if v.wantErr != nil && gotAmount != "" {
 			t.Errorf("expected empty string got %s", gotAmount)
 			return
