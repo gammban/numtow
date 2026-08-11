@@ -12,9 +12,9 @@ var (
 	currencyOpts = map[cur.Currency]currencyInfo{
 		cur.KZT: {
 			Name: map[Declination]string{
-				DeclinationPlural:   "тенге",
-				DeclinationSingular: "тенге",
-				Declination234:      "тенге",
+				DeclinationPlural:   "теңге",
+				DeclinationSingular: "теңге",
+				Declination234:      "теңге",
 			},
 			NameGender: gender.Male,
 			UnitName: map[Declination]string{

@@ -179,19 +179,19 @@ var testCases = []struct {
 	},
 	{
 		giveAmountString: "1.01", giveAmountFloat64: 1.01, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Один тенге одна тиын",
+		wantAmount: "Один теңге одна тиын",
 	},
 	{
 		giveAmountString: "3.02", giveAmountFloat64: 3.02, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Три тенге две тиын",
+		wantAmount: "Три теңге две тиын",
 	},
 	{
 		giveAmountString: "2.45", giveAmountFloat64: 2.45, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(true), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Два тенге сорок пять тиын",
+		wantAmount: "Два теңге сорок пять тиын",
 	},
 	{
 		giveAmountString: "125545215.45", giveAmountFloat64: 125545215.45, giveLang: lang.RU, giveOpts: []interface{}{ru.WithCur(cur.KZT), ru.WithCurConvMU(false), ru.WithCurIgnoreMU(false)},
-		wantAmount: "Сто двадцать пять миллионов пятьсот сорок пять тысяч двести пятнадцать тенге 45 тиын",
+		wantAmount: "Сто двадцать пять миллионов пятьсот сорок пять тысяч двести пятнадцать теңге 45 тиын",
 	},
 	{
 		giveAmountString: "187.51", giveAmountFloat64: 187.51, giveLang: lang.KZ, giveOpts: []interface{}{kz.WithCur(cur.KZT), kz.WithCurConvMU(true), kz.WithCurIgnoreMU(false)},
